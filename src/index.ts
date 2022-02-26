@@ -1,3 +1,3 @@
-export * from './stories/Button'
-export * from './stories/Header'
-export * from './stories/Page'
+export { Button } from './components/Button'
+export { Header } from './components/Header'
+export { Page } from './components/Page'

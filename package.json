@@ -4,11 +4,13 @@
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "react-scripts test",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "build": "rollup -c"
+    "build": "rollup -c && tsc --emitDeclarationOnly",
+    "build:watch": "rollup -c -w"
   },
   "eslintConfig": {
     "extends": [
