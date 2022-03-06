@@ -3,22 +3,22 @@ import { ButtonProps } from '.'
 
 const colors = {
   primary: (theme: DefaultTheme) => css`
-    background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.primary.base};
 
     :hover,
     :focus {
-      background-color: ${theme.colors.primaryLight};
+      background-color: ${theme.colors.primary.light};
     }
 
     :active {
-      background-color: ${theme.colors.primaryDark};
+      background-color: ${theme.colors.primary.dark};
     }
   `,
   secondary: (theme: DefaultTheme) => css`
-    background-color: ${theme.colors.secondary};
+    background-color: ${theme.colors.secondary.base};
   `,
   danger: (theme: DefaultTheme) => css`
-    background-color: ${theme.colors.danger};
+    background-color: ${theme.colors.danger.base};
   `
 }
 

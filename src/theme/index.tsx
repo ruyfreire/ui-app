@@ -7,13 +7,31 @@ import {
 
 export const theme = {
   colors: {
-    primary: '#2059A4',
-    primaryDark: '#194783',
-    primaryLight: '#2c75d5',
-    secondary: '#5ECCD1',
-    danger: '#D8655F',
-    warning: '#F1DC73',
-    success: '#64D870',
+    primary: {
+      base: '#2059A4',
+      light: '#5c85d6',
+      dark: '#003175'
+    },
+    secondary: {
+      base: '#5ECCD1',
+      light: '#94ffff',
+      dark: '#1d9ba0'
+    },
+    danger: {
+      base: '#D8655F',
+      light: '#ff958c',
+      dark: '#a23635'
+    },
+    warning: {
+      base: '#F1DC73',
+      light: '#ffffa4',
+      dark: '#bcab44'
+    },
+    success: {
+      base: '#64D870',
+      light: '#99ffa0',
+      dark: '#29a642'
+    },
     grayLight: '#C4C4C4',
     grayMedium: '#565656',
     grayDark: '#191919',
@@ -48,6 +66,9 @@ export const theme = {
   }
 }
 
+/**
+ * Estilo global usado na base do tema
+ */
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
