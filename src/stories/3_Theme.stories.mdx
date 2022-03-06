@@ -1,0 +1,186 @@
+import {
+  Meta,
+  ColorPalette,
+  ColorItem,
+  Typeset,
+  Story
+} from '@storybook/addon-docs'
+import { theme } from '../theme'
+
+<Meta title="Introdução/Tema" />
+
+# Tema padrão
+
+Todo o tema é gerado usando a biblioteca `styled-components`, e devem ser usado em conjunto para obter o maior uso
+
+- [Cores](#cores)
+- [Tamanho](#tamanho)
+- [Peso de fonte](#peso)
+- [Espaçamento](#espaçamento)
+- [Raio](#raio)
+- [Estilo Global](#estilo-global)
+
+<div style={{ height: '50px' }} />
+
+<style>
+  {`
+    html {
+      font-size: 10px;
+    }
+  `}
+</style>
+
+## Cores
+
+<ColorPalette>
+  <ColorItem
+    title="Primária"
+    subtitle="theme.colors.primary[type]"
+    colors={{
+      light: theme.colors.primary.light,
+      base: theme.colors.primary.base,
+      dark: theme.colors.primary.dark
+    }}
+  />
+  <ColorItem
+    title="Secundária"
+    subtitle="theme.colors.secondary[type]"
+    colors={{
+      light: theme.colors.primary.light,
+      base: theme.colors.primary.base,
+      dark: theme.colors.primary.dark
+    }}
+  />
+  <ColorItem
+    title="Crítico/Cancelar"
+    subtitle="theme.colors.danger[type]"
+    colors={{
+      light: theme.colors.danger.light,
+      base: theme.colors.danger.base,
+      dark: theme.colors.danger.dark
+    }}
+  />
+  <ColorItem
+    title="Aviso"
+    subtitle="theme.colors.warning[type]"
+    colors={{
+      light: theme.colors.warning.light,
+      base: theme.colors.warning.base,
+      dark: theme.colors.warning.dark
+    }}
+  />
+  <ColorItem
+    title="Sucesso/Confirmar"
+    subtitle="theme.colors.success[type]"
+    colors={{
+      light: theme.colors.success.light,
+      base: theme.colors.success.base,
+      dark: theme.colors.success.dark
+    }}
+  />
+  <ColorItem
+    title="Sombra"
+    subtitle="theme.colors.gray[type]"
+    colors={{
+      light: theme.colors.gray.light,
+      base: theme.colors.gray.base,
+      dark: theme.colors.gray.dark
+    }}
+  />
+  <ColorItem
+    title="Texto"
+    subtitle="theme.colors.text"
+    colors={[theme.colors.text]}
+  />
+  <ColorItem
+    title="Preto"
+    subtitle="theme.colors.black"
+    colors={[theme.colors.black]}
+  />
+  <ColorItem
+    title="Off White (Quase branco)"
+    subtitle="theme.colors.offWhite"
+    colors={[theme.colors.offWhite]}
+  />
+  <ColorItem
+    title="Branco"
+    subtitle="theme.colors.white"
+    colors={[theme.colors.white]}
+  />
+</ColorPalette>
+
+## Tamanho
+
+Utilzado em font-size
+
+O `html` possui
+
+| Nome            | Tamanho |
+| --------------- | ------- |
+| theme.sizes.xxs | 1rem    |
+| theme.sizes.xs  | 1.2rem  |
+| theme.sizes.md  | 1.6rem  |
+| theme.sizes.lg  | 2rem    |
+| theme.sizes.xl  | 2.4rem  |
+| theme.sizes.xxl | 2.8rem  |
+
+**Fontes**
+
+<Typeset
+  fontSizes={['1rem', '1.2rem', '1.6rem', '2rem', '2.4rem', '2.8rem']}
+  sampleText="Lorem Ipsum"
+/>
+
+## Peso
+
+| Nome                     | Valor |
+| ------------------------ | ----- |
+| theme.fontWeights.light  | 100   |
+| theme.fontWeights.normal | 300   |
+| theme.fontWeights.medium | 400   |
+| theme.fontWeights.bold   | 700   |
+
+## Espaçamento
+
+Utilizado em paddings e margins
+
+| Nome             | Tamanho |
+| ---------------- | ------- |
+| theme.spacing.xs | 8px     |
+| theme.spacing.md | 16px    |
+| theme.spacing.lg | 24px    |
+| theme.spacing.xl | 32px    |
+
+## Raio
+
+| Nome             | Valor |
+| ---------------- | ----- |
+| theme.spacing.xs | 2px   |
+| theme.spacing.md | 4px   |
+| theme.spacing.lg | 8px   |
+
+## Estilo Global
+
+Estilo global aplicado a cima do tema para normalizar o css da página
+
+```css
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+  }
+
+  html {
+    /**
+    * Transforma a fonte base da página para melhorar a escrita em 'rem',
+    * fazendo 1.6rem = 16px
+    */
+    font-size: 10px;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: ${theme.sizes.md};
+  }
+```
