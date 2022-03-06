@@ -6,11 +6,13 @@
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "react-scripts test",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "build": "rollup -c && tsc --emitDeclarationOnly",
-    "build:watch": "rollup -c -w"
+    "build:watch": "rollup -c -w",
+    "test": "react-scripts test",
+    "prettier": "prettier --write src/**/*",
+    "lint": "eslint --fix --quiet src/**/*"
   },
   "eslintConfig": {
     "extends": [
@@ -68,7 +70,13 @@
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "0.0.9",
     "@types/styled-components": "^5.1.24",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.29.3",
     "postcss": "^8.4.7",
+    "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.68.0",

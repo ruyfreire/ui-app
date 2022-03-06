@@ -19,7 +19,7 @@ const colors = {
   `,
   danger: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.danger};
-  `,
+  `
 }
 
 const sizes = {
@@ -34,7 +34,7 @@ const sizes = {
   large: (theme: DefaultTheme) => css`
     font-size: ${theme.sizes.lg};
     padding: 8px 16px;
-  `,
+  `
 }
 
 interface ButtonStyleProps extends ButtonProps {

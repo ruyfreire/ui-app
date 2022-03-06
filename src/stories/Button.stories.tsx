@@ -9,15 +9,15 @@ export default {
   argTypes: {
     children: {
       type: 'string',
-      defaultValue: 'Botão',
+      defaultValue: 'Botão'
     },
     color: {
-      defaultValue: 'primary',
+      defaultValue: 'primary'
     },
     size: {
-      defaultValue: 'medium',
-    },
-  },
+      defaultValue: 'medium'
+    }
+  }
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
