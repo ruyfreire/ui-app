@@ -15,7 +15,10 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "declaration": true,
-    "outDir": "dist"
+    "declarationDir": "types",
+    "sourceMap": true,
+    "outDir": "dist",
+    "emitDeclarationOnly": true
   },
   "include": ["src"],
   "exclude": ["src/stories", "src/setupTests.ts"]

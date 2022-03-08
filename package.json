@@ -2,13 +2,16 @@
   "name": "ui-app",
   "version": "0.1.0",
   "private": true,
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "build": "rollup -c && tsc --emitDeclarationOnly",
+    "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "test": "react-scripts test",
     "prettier": "prettier --write src/**/*",
@@ -81,12 +84,14 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.68.0",
+    "rollup-plugin-dts": "^4.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "webpack": "^5.69.1"
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
   }
 }
