@@ -2,7 +2,9 @@ import React from 'react'
 import {
   ThemeProvider,
   createGlobalStyle,
-  DefaultTheme
+  DefaultTheme,
+  GlobalStyleComponent,
+  CSSObject
 } from 'styled-components'
 
 export const theme = {
@@ -114,7 +116,10 @@ export const theme = {
 /**
  * Estilo global usado na base do tema
  */
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle: GlobalStyleComponent<
+  CSSObject,
+  DefaultTheme
+> = createGlobalStyle`
   * {
     box-sizing: border-box;
     margin: 0;
@@ -132,7 +137,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-export interface ThemeProviderUiAppProps {
+/**
+ * Interface de props do provedor de tema
+ */
+export interface IThemeProviderUiAppProps {
   /**
    * Conteúdo para receber o tema
    */
@@ -149,7 +157,7 @@ export interface ThemeProviderUiAppProps {
 export const ThemeProviderUiApp = ({
   children,
   overrideTheme
-}: ThemeProviderUiAppProps) => {
+}: IThemeProviderUiAppProps) => {
   let applyTheme = theme
 
   if (overrideTheme) {

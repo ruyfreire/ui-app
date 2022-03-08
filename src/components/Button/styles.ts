@@ -1,5 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components'
-import { ButtonProps } from '.'
+import { IButtonProps } from '.'
 
 const variantContained = {
   primary: (theme: DefaultTheme) => css`
@@ -145,12 +145,12 @@ const sizes = {
   `
 }
 
-interface ButtonStyleProps extends ButtonProps {
+interface IButtonStyleProps extends IButtonProps {
   theme: DefaultTheme
 }
 
 export const Button = styled.button`
-  ${({ theme, color, variant, size }: ButtonStyleProps) => css`
+  ${({ theme, color, variant, size }: IButtonStyleProps) => css`
     font-family: ${theme.fontFamily.base};
     color: ${theme.colors.offWhite};
     letter-spacing: 2px;
@@ -173,13 +173,13 @@ export const Button = styled.button`
   `}
 `
 
-interface IconButtonStyleProps {
+interface IIconButtonStyleProps {
   theme?: DefaultTheme
   pos?: 'left' | 'right'
 }
 
 export const Icon = styled.i`
-  ${({ pos }: IconButtonStyleProps) => css`
+  ${({ pos }: IIconButtonStyleProps) => css`
     padding: 2px;
     margin: ${pos === 'right' ? '0 0 0 8px' : '0 8px 0 0'};
   `}

@@ -1436,7 +1436,11 @@ var theme = {
 /**
  * Estilo global usado na base do tema
  */
-var GlobalStyle = $e(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n  }\n"], ["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n  }\n"])), theme.fontFamily.base, theme.sizes.md);
+var GlobalStyle = $e(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n  }\n"], ["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n  }\n"
+    /**
+     * Interface de props do provedor de tema
+     */
+])), theme.fontFamily.base, theme.sizes.md);
 /**
  * Tema padrão com GlobalStyle aplicado
  */

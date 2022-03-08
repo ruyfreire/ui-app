@@ -5,7 +5,7 @@ import * as S from './styles'
 /**
  * Interface de Props para o componente Button
  */
-export interface ButtonProps {
+export interface IButtonProps {
   /**
    * Conteúdo do botão
    */
@@ -48,7 +48,7 @@ export const Button = ({
   endIcon,
   onClick,
   ...props
-}: ButtonProps) => (
+}: IButtonProps) => (
   <S.Button
     color={color}
     variant={variant}

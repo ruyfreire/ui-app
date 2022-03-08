@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, GlobalStyleComponent, CSSObject } from 'styled-components';
 export declare const theme: {
     colors: {
         primary: {
@@ -108,8 +108,11 @@ export declare const theme: {
 /**
  * Estilo global usado na base do tema
  */
-export declare const GlobalStyle: import("styled-components").GlobalStyleComponent<{}, DefaultTheme>;
-export interface ThemeProviderUiAppProps {
+export declare const GlobalStyle: GlobalStyleComponent<CSSObject, DefaultTheme>;
+/**
+ * Interface de props do provedor de tema
+ */
+export interface IThemeProviderUiAppProps {
     /**
      * Conteúdo para receber o tema
      */
@@ -122,4 +125,4 @@ export interface ThemeProviderUiAppProps {
 /**
  * Tema padrão com GlobalStyle aplicado
  */
-export declare const ThemeProviderUiApp: ({ children, overrideTheme }: ThemeProviderUiAppProps) => JSX.Element;
+export declare const ThemeProviderUiApp: ({ children, overrideTheme }: IThemeProviderUiAppProps) => JSX.Element;

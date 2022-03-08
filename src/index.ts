@@ -1,5 +1,5 @@
 // Componentes
-export { Button } from './components/Button'
+export * from './components/Button'
 
 // Tema
 export * from './theme'

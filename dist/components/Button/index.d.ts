@@ -2,7 +2,7 @@ import React from 'react';
 /**
  * Interface de Props para o componente Button
  */
-export interface ButtonProps {
+export interface IButtonProps {
     /**
      * Conteúdo do botão
      */
@@ -35,4 +35,4 @@ export interface ButtonProps {
 /**
  * Botão de ação
  */
-export declare const Button: ({ children, color, variant, size, startIcon, endIcon, onClick, ...props }: ButtonProps) => JSX.Element;
+export declare const Button: ({ children, color, variant, size, startIcon, endIcon, onClick, ...props }: IButtonProps) => JSX.Element;
