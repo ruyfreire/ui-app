@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import { ButtonProps } from '.'
 
-const colors = {
+const variantContained = {
   primary: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.primary.base};
 
@@ -40,6 +40,93 @@ const colors = {
   `
 }
 
+const variantOutline = {
+  primary: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.primary.base};
+    color: ${theme.colors.primary.base};
+
+    :hover,
+    :focus {
+      border-color: ${theme.colors.primary.light};
+      color: ${theme.colors.primary.light};
+    }
+
+    :active {
+      border-color: ${theme.colors.primary.dark};
+      color: ${theme.colors.primary.dark};
+    }
+  `,
+  secondary: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.secondary.base};
+    color: ${theme.colors.secondary.base};
+
+    :hover,
+    :focus {
+      border-color: ${theme.colors.secondary.light};
+      color: ${theme.colors.secondary.light};
+    }
+
+    :active {
+      border-color: ${theme.colors.secondary.dark};
+      color: ${theme.colors.secondary.dark};
+    }
+  `,
+  danger: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.danger.base};
+    color: ${theme.colors.danger.base};
+
+    :hover,
+    :focus {
+      border-color: ${theme.colors.danger.light};
+      color: ${theme.colors.danger.light};
+    }
+
+    :active {
+      border-color: ${theme.colors.danger.dark};
+      color: ${theme.colors.danger.dark};
+    }
+  `
+}
+
+const variantText = {
+  primary: (theme: DefaultTheme) => css`
+    color: ${theme.colors.primary.base};
+
+    :hover,
+    :focus {
+      color: ${theme.colors.primary.light};
+    }
+
+    :active {
+      color: ${theme.colors.primary.dark};
+    }
+  `,
+  secondary: (theme: DefaultTheme) => css`
+    color: ${theme.colors.secondary.base};
+
+    :hover,
+    :focus {
+      color: ${theme.colors.secondary.light};
+    }
+
+    :active {
+      color: ${theme.colors.secondary.dark};
+    }
+  `,
+  danger: (theme: DefaultTheme) => css`
+    color: ${theme.colors.danger.base};
+
+    :hover,
+    :focus {
+      color: ${theme.colors.danger.light};
+    }
+
+    :active {
+      color: ${theme.colors.danger.dark};
+    }
+  `
+}
+
 const sizes = {
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.sizes.xs};
@@ -63,15 +150,37 @@ interface ButtonStyleProps extends ButtonProps {
 }
 
 export const Button = styled.button`
-  ${({ theme, color = 'primary', size = 'medium' }: ButtonStyleProps) => css`
-    border: none;
-    border-radius: ${theme.radius.md};
-    cursor: pointer;
-    letter-spacing: 2px;
-    color: ${theme.colors.offWhite};
+  ${({ theme, color, variant, size }: ButtonStyleProps) => css`
     font-family: ${theme.fontFamily.base};
+    color: ${theme.colors.offWhite};
+    letter-spacing: 2px;
+    line-height: 1px;
 
-    ${colors[color](theme)}
-    ${sizes[size](theme)}
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: ${theme.radius.md};
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    ${color &&
+    (variant === 'text'
+      ? variantText[color](theme)
+      : variant === 'outline'
+      ? variantOutline[color](theme)
+      : variantContained[color](theme))}
+    ${size && sizes[size](theme)}
+  `}
+`
+
+interface IconButtonStyleProps {
+  theme?: DefaultTheme
+  pos?: 'left' | 'right'
+}
+
+export const Icon = styled.i`
+  ${({ pos }: IconButtonStyleProps) => css`
+    padding: 2px;
+    margin: ${pos === 'right' ? '0 0 0 8px' : '0 8px 0 0'};
   `}
 `
