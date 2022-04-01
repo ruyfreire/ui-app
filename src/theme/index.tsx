@@ -3,38 +3,65 @@ import { createGlobalStyle } from 'styled-components'
 export const theme = {
   colors: {
     primary: {
-      base: '#2059A4',
-      light: '#2567be',
-      dark: '#1c5093'
+      base: '#5561FF',
+      light: '#6B75FF',
+      dark: '#4B4FA0'
     },
     secondary: {
-      base: '#47A4A9',
-      light: '#53b2b7',
-      dark: '#3f9398'
+      base: '#6E7198',
+      light: '#B9BCD9',
+      dark: '#4F5275'
     },
-    danger: {
-      base: '#D8655F',
-      light: '#db746f',
-      dark: '#d14c45'
+    peach: {
+      base: '#FF7387',
+      light: '#FF96A5',
+      dark: '#EF586E'
     },
-    warning: {
-      base: '#F1DC73',
-      light: '#f2df80',
-      dark: '#edd352'
+    mint: {
+      base: '#3EEBBE',
+      light: '#68FCD6',
+      dark: '#32D4AA'
     },
-    success: {
-      base: '#64D870',
-      light: '#73db7e',
-      dark: '#4ad158'
+    banana: {
+      base: '#FEC166',
+      light: '#FFD9A0',
+      dark: '#EEA02B'
     },
-    gray: {
-      base: '#838383',
-      light: '#c7c7c7',
-      dark: '#565656'
+    blueberry: {
+      base: '#0AA4E7',
+      light: '#4EC1F3',
+      dark: '#1766F9'
     },
-    text: '#2d2d2d',
+    grape: {
+      base: '#7366FE',
+      light: '#A19AFE',
+      dark: '#5218FF'
+    },
+    gum: {
+      base: '#E666B3',
+      light: '#FF8BD5',
+      dark: '#DA46A6'
+    },
+    milk: {
+      base: '#C5D2EC',
+      light: '#FFFFFF',
+      dark: '#7F98BC'
+    },
+    background: {
+      primary: '#28393D',
+      section: '#2D2F45',
+      card: '#373951',
+      cardSection: '#3E405B'
+    },
+    gradient: {
+      matte: 'linear-gradient(106.48deg, #1C1C28 0%, #363649 100%)',
+      atlantic:
+        'linear-gradient(90.41deg, #FFFFFF 0%, #3EEBBE 0%, #4EC1F3 0.01%, #68FCD6 100%)',
+      pacific: 'linear-gradient(140.48deg, #1AD1DA -8.27%, #4A5ACD 90.58%)',
+      magma: 'linear-gradient(90.41deg, #F34E4E 0.01%, #FCA668 100%)',
+      inferno: 'linear-gradient(90.41deg, #BE0000 0%, #FC7168 100%)'
+    },
     black: '#000000',
-    offWhite: '#fafafa',
     white: '#FFFFFF'
   },
   spacing: {
