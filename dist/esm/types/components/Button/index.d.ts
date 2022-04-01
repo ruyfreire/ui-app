@@ -2,11 +2,7 @@ import React from 'react';
 /**
  * Interface de Props para o componente Button
  */
-export interface IButtonProps {
-    /**
-     * Conteúdo do botão
-     */
-    children: React.ReactNode;
+export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     /**
      * Modifica a cor do botão
      */
@@ -27,10 +23,6 @@ export interface IButtonProps {
      * Exibir um ícone ao lado direito do texto do botão
      */
     endIcon?: React.ReactNode;
-    /**
-     * Evento de clique do botão
-     */
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 /**
  * Botão de ação

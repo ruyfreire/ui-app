@@ -5,13 +5,13 @@ import {
   Typeset,
   Story
 } from '@storybook/addon-docs'
-import { theme } from '../theme'
+import { theme } from '../src/theme'
 
 <Meta title="Introdução/Tema" />
 
 # Tema padrão
 
-Todo o tema é gerado usando a biblioteca `styled-components`, e devem ser usado em conjunto para obter o maior uso
+Todo o tema é gerado usando a biblioteca `styled-components`, e devem ser usado em conjunto
 
 - [Cores](#cores)
 - [Tamanho](#tamanho)
@@ -164,23 +164,23 @@ Utilizado em paddings e margins
 Estilo global aplicado a cima do tema para normalizar o css da página
 
 ```css
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
 
-  html {
-    /**
-    * Transforma a fonte base da página para melhorar a escrita em 'rem',
-    * fazendo 1.6rem = 16px
-    */
-    font-size: 10px;
-  }
+html {
+  /**
+  * Transforma a fonte base da página para melhorar a escrita em 'rem',
+  * fazendo 1.6rem = 16px
+  */
+  font-size: 10px;
+}
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    font-size: ${theme.sizes.md};
-  }
+body {
+  font-family: ${theme.font.family.base};
+  font-size: ${theme.font.size.md};
+}
 ```

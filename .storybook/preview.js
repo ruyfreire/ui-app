@@ -1,5 +1,6 @@
 import React from 'react'
-import { ThemeProviderUiApp } from '../src/theme'
+import { ThemeProvider } from 'styled-components'
+import { theme, GlobalStyle } from '../src/theme'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -14,8 +15,9 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProviderUiApp>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Story />
-    </ThemeProviderUiApp>
+    </ThemeProvider>
   ),
 ]

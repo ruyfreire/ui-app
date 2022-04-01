@@ -2,11 +2,12 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var jsxRuntime = require('react/jsx-runtime');
+var React = require('react');
 var styled = require('styled-components');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 
 /*! *****************************************************************************
@@ -52,34 +53,31 @@ function __makeTemplateObject(cooked, raw) {
     return cooked;
 }
 
-var variantContained = {
-    primary: function (theme) { return styled.css(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n    background-color: ", ";\n\n    :hover,\n    :focus {\n      background-color: ", ";\n    }\n\n    :active {\n      background-color: ", ";\n    }\n  "], ["\n    background-color: ", ";\n\n    :hover,\n    :focus {\n      background-color: ", ";\n    }\n\n    :active {\n      background-color: ", ";\n    }\n  "])), theme.colors.primary.base, theme.colors.primary.light, theme.colors.primary.dark); },
-    secondary: function (theme) { return styled.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    background-color: ", ";\n\n    :hover,\n    :focus {\n      background-color: ", ";\n    }\n\n    :active {\n      background-color: ", ";\n    }\n  "], ["\n    background-color: ", ";\n\n    :hover,\n    :focus {\n      background-color: ", ";\n    }\n\n    :active {\n      background-color: ", ";\n    }\n  "])), theme.colors.secondary.base, theme.colors.secondary.light, theme.colors.secondary.dark); },
-    danger: function (theme) { return styled.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n    background-color: ", ";\n\n    :hover,\n    :focus {\n      background-color: ", ";\n    }\n\n    :active {\n      background-color: ", ";\n    }\n  "], ["\n    background-color: ", ";\n\n    :hover,\n    :focus {\n      background-color: ", ";\n    }\n\n    :active {\n      background-color: ", ";\n    }\n  "])), theme.colors.danger.base, theme.colors.danger.light, theme.colors.danger.dark); }
-};
-var variantOutline = {
-    primary: function (theme) { return styled.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n    border-color: ", ";\n    color: ", ";\n\n    :hover,\n    :focus {\n      border-color: ", ";\n      color: ", ";\n    }\n\n    :active {\n      border-color: ", ";\n      color: ", ";\n    }\n  "], ["\n    border-color: ", ";\n    color: ", ";\n\n    :hover,\n    :focus {\n      border-color: ", ";\n      color: ", ";\n    }\n\n    :active {\n      border-color: ", ";\n      color: ", ";\n    }\n  "])), theme.colors.primary.base, theme.colors.primary.base, theme.colors.primary.light, theme.colors.primary.light, theme.colors.primary.dark, theme.colors.primary.dark); },
-    secondary: function (theme) { return styled.css(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n    border-color: ", ";\n    color: ", ";\n\n    :hover,\n    :focus {\n      border-color: ", ";\n      color: ", ";\n    }\n\n    :active {\n      border-color: ", ";\n      color: ", ";\n    }\n  "], ["\n    border-color: ", ";\n    color: ", ";\n\n    :hover,\n    :focus {\n      border-color: ", ";\n      color: ", ";\n    }\n\n    :active {\n      border-color: ", ";\n      color: ", ";\n    }\n  "])), theme.colors.secondary.base, theme.colors.secondary.base, theme.colors.secondary.light, theme.colors.secondary.light, theme.colors.secondary.dark, theme.colors.secondary.dark); },
-    danger: function (theme) { return styled.css(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n    border-color: ", ";\n    color: ", ";\n\n    :hover,\n    :focus {\n      border-color: ", ";\n      color: ", ";\n    }\n\n    :active {\n      border-color: ", ";\n      color: ", ";\n    }\n  "], ["\n    border-color: ", ";\n    color: ", ";\n\n    :hover,\n    :focus {\n      border-color: ", ";\n      color: ", ";\n    }\n\n    :active {\n      border-color: ", ";\n      color: ", ";\n    }\n  "])), theme.colors.danger.base, theme.colors.danger.base, theme.colors.danger.light, theme.colors.danger.light, theme.colors.danger.dark, theme.colors.danger.dark); }
-};
-var variantText = {
-    primary: function (theme) { return styled.css(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n    color: ", ";\n\n    :hover,\n    :focus {\n      color: ", ";\n    }\n\n    :active {\n      color: ", ";\n    }\n  "], ["\n    color: ", ";\n\n    :hover,\n    :focus {\n      color: ", ";\n    }\n\n    :active {\n      color: ", ";\n    }\n  "])), theme.colors.primary.base, theme.colors.primary.light, theme.colors.primary.dark); },
-    secondary: function (theme) { return styled.css(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n    color: ", ";\n\n    :hover,\n    :focus {\n      color: ", ";\n    }\n\n    :active {\n      color: ", ";\n    }\n  "], ["\n    color: ", ";\n\n    :hover,\n    :focus {\n      color: ", ";\n    }\n\n    :active {\n      color: ", ";\n    }\n  "])), theme.colors.secondary.base, theme.colors.secondary.light, theme.colors.secondary.dark); },
-    danger: function (theme) { return styled.css(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n    color: ", ";\n\n    :hover,\n    :focus {\n      color: ", ";\n    }\n\n    :active {\n      color: ", ";\n    }\n  "], ["\n    color: ", ";\n\n    :hover,\n    :focus {\n      color: ", ";\n    }\n\n    :active {\n      color: ", ";\n    }\n  "])), theme.colors.danger.base, theme.colors.danger.light, theme.colors.danger.dark); }
+var variants = {
+    contained: {
+        primary: function (theme) { return styled.css(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n      background-color: ", ";\n\n      :hover,\n      :focus {\n        background-color: ", ";\n      }\n\n      :active {\n        background-color: ", ";\n      }\n    "], ["\n      background-color: ", ";\n\n      :hover,\n      :focus {\n        background-color: ", ";\n      }\n\n      :active {\n        background-color: ", ";\n      }\n    "])), theme.colors.primary.base, theme.colors.primary.light, theme.colors.primary.dark); },
+        secondary: function (theme) { return styled.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n      background-color: ", ";\n\n      :hover,\n      :focus {\n        background-color: ", ";\n      }\n\n      :active {\n        background-color: ", ";\n      }\n    "], ["\n      background-color: ", ";\n\n      :hover,\n      :focus {\n        background-color: ", ";\n      }\n\n      :active {\n        background-color: ", ";\n      }\n    "])), theme.colors.secondary.base, theme.colors.secondary.light, theme.colors.secondary.dark); },
+        danger: function (theme) { return styled.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n      background-color: ", ";\n\n      :hover,\n      :focus {\n        background-color: ", ";\n      }\n\n      :active {\n        background-color: ", ";\n      }\n    "], ["\n      background-color: ", ";\n\n      :hover,\n      :focus {\n        background-color: ", ";\n      }\n\n      :active {\n        background-color: ", ";\n      }\n    "])), theme.colors.danger.base, theme.colors.danger.light, theme.colors.danger.dark); }
+    },
+    outline: {
+        primary: function (theme) { return styled.css(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n      border-color: ", ";\n      color: ", ";\n\n      :hover,\n      :focus {\n        border-color: ", ";\n        color: ", ";\n      }\n\n      :active {\n        border-color: ", ";\n        color: ", ";\n      }\n    "], ["\n      border-color: ", ";\n      color: ", ";\n\n      :hover,\n      :focus {\n        border-color: ", ";\n        color: ", ";\n      }\n\n      :active {\n        border-color: ", ";\n        color: ", ";\n      }\n    "])), theme.colors.primary.base, theme.colors.primary.base, theme.colors.primary.light, theme.colors.primary.light, theme.colors.primary.dark, theme.colors.primary.dark); },
+        secondary: function (theme) { return styled.css(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n      border-color: ", ";\n      color: ", ";\n\n      :hover,\n      :focus {\n        border-color: ", ";\n        color: ", ";\n      }\n\n      :active {\n        border-color: ", ";\n        color: ", ";\n      }\n    "], ["\n      border-color: ", ";\n      color: ", ";\n\n      :hover,\n      :focus {\n        border-color: ", ";\n        color: ", ";\n      }\n\n      :active {\n        border-color: ", ";\n        color: ", ";\n      }\n    "])), theme.colors.secondary.base, theme.colors.secondary.base, theme.colors.secondary.light, theme.colors.secondary.light, theme.colors.secondary.dark, theme.colors.secondary.dark); },
+        danger: function (theme) { return styled.css(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n      border-color: ", ";\n      color: ", ";\n\n      :hover,\n      :focus {\n        border-color: ", ";\n        color: ", ";\n      }\n\n      :active {\n        border-color: ", ";\n        color: ", ";\n      }\n    "], ["\n      border-color: ", ";\n      color: ", ";\n\n      :hover,\n      :focus {\n        border-color: ", ";\n        color: ", ";\n      }\n\n      :active {\n        border-color: ", ";\n        color: ", ";\n      }\n    "])), theme.colors.danger.base, theme.colors.danger.base, theme.colors.danger.light, theme.colors.danger.light, theme.colors.danger.dark, theme.colors.danger.dark); }
+    },
+    text: {
+        primary: function (theme) { return styled.css(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n      color: ", ";\n\n      :hover,\n      :focus {\n        color: ", ";\n      }\n\n      :active {\n        color: ", ";\n      }\n    "], ["\n      color: ", ";\n\n      :hover,\n      :focus {\n        color: ", ";\n      }\n\n      :active {\n        color: ", ";\n      }\n    "])), theme.colors.primary.base, theme.colors.primary.light, theme.colors.primary.dark); },
+        secondary: function (theme) { return styled.css(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n      color: ", ";\n\n      :hover,\n      :focus {\n        color: ", ";\n      }\n\n      :active {\n        color: ", ";\n      }\n    "], ["\n      color: ", ";\n\n      :hover,\n      :focus {\n        color: ", ";\n      }\n\n      :active {\n        color: ", ";\n      }\n    "])), theme.colors.secondary.base, theme.colors.secondary.light, theme.colors.secondary.dark); },
+        danger: function (theme) { return styled.css(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n      color: ", ";\n\n      :hover,\n      :focus {\n        color: ", ";\n      }\n\n      :active {\n        color: ", ";\n      }\n    "], ["\n      color: ", ";\n\n      :hover,\n      :focus {\n        color: ", ";\n      }\n\n      :active {\n        color: ", ";\n      }\n    "])), theme.colors.danger.base, theme.colors.danger.light, theme.colors.danger.dark); }
+    }
 };
 var sizes = {
-    small: function (theme) { return styled.css(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n    font-size: ", ";\n    padding: 4px 14px;\n    min-height: 28px;\n  "], ["\n    font-size: ", ";\n    padding: 4px 14px;\n    min-height: 28px;\n  "])), theme.sizes.xs); },
-    medium: function (theme) { return styled.css(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n    font-size: ", ";\n    padding: 6px 20px;\n    min-height: 32px;\n  "], ["\n    font-size: ", ";\n    padding: 6px 20px;\n    min-height: 32px;\n  "])), theme.sizes.md); },
-    large: function (theme) { return styled.css(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n    font-size: ", ";\n    padding: 8px 26px;\n    min-height: 38px;\n  "], ["\n    font-size: ", ";\n    padding: 8px 26px;\n    min-height: 38px;\n  "])), theme.sizes.lg); }
+    small: function (theme) { return styled.css(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n    font-size: ", ";\n    padding: 4px 14px;\n    min-height: 28px;\n  "], ["\n    font-size: ", ";\n    padding: 4px 14px;\n    min-height: 28px;\n  "])), theme.font.size.xs); },
+    medium: function (theme) { return styled.css(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n    font-size: ", ";\n    padding: 6px 20px;\n    min-height: 32px;\n  "], ["\n    font-size: ", ";\n    padding: 6px 20px;\n    min-height: 32px;\n  "])), theme.font.size.md); },
+    large: function (theme) { return styled.css(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n    font-size: ", ";\n    padding: 8px 26px;\n    min-height: 38px;\n  "], ["\n    font-size: ", ";\n    padding: 8px 26px;\n    min-height: 38px;\n  "])), theme.font.size.lg); }
 };
 var Button$1 = styled__default["default"].button(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var theme = _a.theme, color = _a.color, variant = _a.variant, size = _a.size;
-    return styled.css(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n    font-family: ", ";\n    color: ", ";\n    letter-spacing: 2px;\n    line-height: 1px;\n\n    display: inline-flex;\n    align-items: center;\n    cursor: pointer;\n    border-radius: ", ";\n    border: 1px solid transparent;\n    background-color: transparent;\n\n    ", "\n    ", "\n  "], ["\n    font-family: ", ";\n    color: ", ";\n    letter-spacing: 2px;\n    line-height: 1px;\n\n    display: inline-flex;\n    align-items: center;\n    cursor: pointer;\n    border-radius: ", ";\n    border: 1px solid transparent;\n    background-color: transparent;\n\n    ", "\n    ", "\n  "])), theme.fontFamily.base, theme.colors.offWhite, theme.radius.md, color &&
-        (variant === 'text'
-            ? variantText[color](theme)
-            : variant === 'outline'
-                ? variantOutline[color](theme)
-                : variantContained[color](theme)), size && sizes[size](theme));
+    return styled.css(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n    font-family: ", ";\n    color: ", ";\n    letter-spacing: 2px;\n    line-height: 1px;\n\n    display: inline-flex;\n    align-items: center;\n    cursor: pointer;\n    border-radius: ", ";\n    border: 1px solid transparent;\n    background-color: transparent;\n\n    ", "\n    ", "\n  "], ["\n    font-family: ", ";\n    color: ", ";\n    letter-spacing: 2px;\n    line-height: 1px;\n\n    display: inline-flex;\n    align-items: center;\n    cursor: pointer;\n    border-radius: ", ";\n    border: 1px solid transparent;\n    background-color: transparent;\n\n    ", "\n    ", "\n  "])), theme.font.family.heading, theme.colors.offWhite, theme.radius.md, !!variant && !!color && variants[variant][color](theme), size && sizes[size](theme));
 });
 var Icon = styled__default["default"].i(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var pos = _a.pos;
@@ -92,137 +90,85 @@ var templateObject_1$1, templateObject_2, templateObject_3, templateObject_4, te
  */
 var Button = function (_a) {
     var children = _a.children, _b = _a.color, color = _b === void 0 ? 'primary' : _b, _c = _a.variant, variant = _c === void 0 ? 'contained' : _c, _d = _a.size, size = _d === void 0 ? 'medium' : _d, startIcon = _a.startIcon, endIcon = _a.endIcon, onClick = _a.onClick, props = __rest(_a, ["children", "color", "variant", "size", "startIcon", "endIcon", "onClick"]);
-    return (jsxRuntime.jsxs(Button$1, __assign({ color: color, variant: variant, size: size, onClick: onClick }, props, { children: [startIcon && jsxRuntime.jsx(Icon, __assign({ pos: "left" }, { children: startIcon })), children, endIcon && jsxRuntime.jsx(Icon, __assign({ pos: "right" }, { children: endIcon }))] })));
+    return (React__default["default"].createElement(Button$1, __assign({ color: color, variant: variant, size: size, onClick: onClick }, props),
+        startIcon && React__default["default"].createElement(Icon, { pos: "left" }, startIcon),
+        children,
+        endIcon && React__default["default"].createElement(Icon, { pos: "right" }, endIcon)));
 };
 
 var theme = {
     colors: {
         primary: {
-            /** base: '#2059A4' */
             base: '#2059A4',
-            /** light: '#2567be' */
             light: '#2567be',
-            /** dark: '#1c5093' */
             dark: '#1c5093'
         },
         secondary: {
-            /** base: '#47A4A9' */
             base: '#47A4A9',
-            /** light: '#53b2b7' */
             light: '#53b2b7',
-            /** dark: '#3f9398' */
             dark: '#3f9398'
         },
         danger: {
-            /** base: '#D8655F' */
             base: '#D8655F',
-            /** light: '#db746f' */
             light: '#db746f',
-            /** dark: '#d14c45' */
             dark: '#d14c45'
         },
         warning: {
-            /** base: '#F1DC73' */
             base: '#F1DC73',
-            /** light: '#f2df80' */
             light: '#f2df80',
-            /** dark: '#edd352' */
             dark: '#edd352'
         },
         success: {
-            /** base: '#64D870' */
             base: '#64D870',
-            /** light: '#73db7e' */
             light: '#73db7e',
-            /** dark: '#4ad158' */
             dark: '#4ad158'
         },
         gray: {
-            /** base: '#838383' */
             base: '#838383',
-            /** light: '#c7c7c7' */
             light: '#c7c7c7',
-            /** dark: '#565656' */
             dark: '#565656'
         },
-        /** text: '#2d2d2d' */
         text: '#2d2d2d',
-        /** black: '#000000' */
         black: '#000000',
-        /** offWhite: '#fafafa' */
         offWhite: '#fafafa',
-        /** white: '#FFFFFF' */
         white: '#FFFFFF'
     },
-    sizes: {
-        /** xxs: '1px' */
-        xxs: '1rem',
-        /** xs: '12px' */
-        xs: '1.2rem',
-        /** md: '16px' */
-        md: '1.6rem',
-        /** lg: '2px' */
-        lg: '2rem',
-        /** xl: '24px' */
-        xl: '2.4rem',
-        /** xxl: '28px' */
-        xxl: '2.8rem'
-    },
-    fontWeights: {
-        /** light: 100 */
-        light: 100,
-        /** normal: 300 */
-        normal: 300,
-        /** medium: 400 */
-        medium: 400,
-        /** bold: 700 */
-        bold: 700
-    },
     spacing: {
-        /** xs: '8px' */
         xs: '8px',
-        /** md: '16px' */
         md: '16px',
-        /** lg: '24px' */
         lg: '24px',
-        /** xl: '32px' */
         xl: '32px'
     },
     radius: {
-        /** xs: '2px' */
         xs: '2px',
-        /** md: '4px' */
         md: '4px',
-        /** lg: '8px' */
         lg: '8px'
     },
-    fontFamily: {
-        base: '"Lato", Roboto, sans-serif'
+    font: {
+        family: {
+            heading: '"R-Flex", Roboto, sans-serif',
+            base: '"Inter", Roboto, sans-serif'
+        },
+        weight: {
+            medium: 400,
+            bold: 700
+        },
+        size: {
+            xs: '1.2rem',
+            sm: '1.4rem',
+            md: '1.6rem',
+            lg: '2rem',
+            xl: '2.4rem'
+        }
     }
 };
 /**
  * Estilo global usado na base do tema
  */
-var GlobalStyle = styled.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n  }\n"], ["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n  }\n"
-    /**
-     * Interface de props do provedor de tema
-     */
-])), theme.fontFamily.base, theme.sizes.md);
-/**
- * Tema padrão com GlobalStyle aplicado
- */
-var ThemeProviderUiApp = function (_a) {
-    var children = _a.children, overrideTheme = _a.overrideTheme;
-    var applyTheme = theme;
-    if (overrideTheme) {
-        applyTheme = __assign(__assign({}, theme), overrideTheme);
-    }
-    return (jsxRuntime.jsxs(styled.ThemeProvider, __assign({ theme: applyTheme }, { children: [jsxRuntime.jsx(GlobalStyle, {}), children] })));
-};
+var GlobalStyle = styled.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n  }\n"], ["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n  }\n"])), theme.font.family.base, theme.font.size.md);
 var templateObject_1;
 
 exports.Button = Button;
 exports.GlobalStyle = GlobalStyle;
-exports.ThemeProviderUiApp = ThemeProviderUiApp;
 exports.theme = theme;
 //# sourceMappingURL=index.js.map
