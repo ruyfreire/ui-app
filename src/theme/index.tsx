@@ -71,9 +71,10 @@ export const theme = {
     xl: '32px'
   },
   radius: {
-    xs: '2px',
-    md: '4px',
-    lg: '8px'
+    xs: '4px',
+    sm: '8px',
+    md: '12px',
+    lg: '24px'
   },
   font: {
     family: {

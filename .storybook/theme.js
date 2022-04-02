@@ -1,8 +1,8 @@
 import { create } from '@storybook/theming'
+import { theme } from '../src/theme'
 
 export default create({
-  colorPrimary: '#2059A4',
-  colorSecondary: '#5ECCD1',
   brandTitle: 'UI APP',
-  brandUrl: 'https://github.com/ruyfreire/ui-app'
+  brandUrl: 'https://github.com/ruyfreire/ui-app',
+  appContentBg: '#323347'
 })

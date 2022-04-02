@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Button } from '../src/components/Button'
@@ -21,13 +21,10 @@ export default {
   argTypes: {
     children: {
       type: 'string',
-      defaultValue: 'Botão'
-    },
-    color: {
-      defaultValue: 'primary'
+      defaultValue: 'Botão de ação'
     },
     variant: {
-      defaultValue: 'contained'
+      defaultValue: 'primary'
     },
     size: {
       defaultValue: 'medium'
@@ -38,8 +35,13 @@ export default {
     endIcon: {
       type: 'symbol'
     },
-    onClick: {
-      type: 'function'
+    loading: {
+      type: 'boolean',
+      defaultValue: false
+    },
+    disabled: {
+      type: 'boolean',
+      defaultValue: false
     }
   }
 } as ComponentMeta<typeof Button>
@@ -55,3 +57,17 @@ export const Icone: ComponentStory<typeof Button> = (args) => (
     <Button {...args} endIcon={Svg} />
   </div>
 )
+
+export const Loading: ComponentStory<typeof Button> = (args) => {
+  const [loading, setLoading] = useState(false)
+
+  return (
+    <Button
+      {...args}
+      loading={args.loading || loading}
+      onClick={() => setLoading(!loading)}
+    >
+      Clique me
+    </Button>
+  )
+}
