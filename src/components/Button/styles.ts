@@ -1,5 +1,5 @@
 import styled, { css, DefaultTheme, keyframes } from 'styled-components'
-import { IButtonProps } from '.'
+import { ButtonProps } from '.'
 
 const rotate = keyframes`
   from {
@@ -15,60 +15,66 @@ const variants = {
   primary: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.primary.base};
 
-    :hover,
-    :focus {
+    :hover:not(:disabled),
+    :focus:not(:disabled) {
       background-color: ${theme.colors.primary.light};
       box-shadow: 0px 12px 16px 0px ${theme.colors.black}4D;
     }
 
-    :active {
+    :active:not(:disabled) {
       background-color: ${theme.colors.primary.dark};
+      box-shadow: none;
     }
 
     :disabled {
-      background-color: ${theme.colors.secondary.base};
-      cursor: not-allowed;
+      background-color: ${theme.colors.disabled};
     }
   `,
   secondary: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.secondary.base};
 
-    :hover,
-    :focus {
-      background-color: ${theme.colors.secondary.light};
+    :hover:not(:disabled),
+    :focus:not(:disabled) {
       box-shadow: 0px 12px 16px 0px ${theme.colors.black}4D;
     }
 
-    :active {
+    :active:not(:disabled) {
       background-color: ${theme.colors.secondary.dark};
+      box-shadow: none;
+    }
+
+    :disabled {
+      background-color: ${theme.colors.disabled};
     }
   `,
-  tertiary: (theme: DefaultTheme) => css`
-    color: ${theme.colors.peach.base};
+  tertiary: (theme: DefaultTheme, loading?: boolean) => css`
+    background-color: ${loading ? theme.colors.black3 : 'transparent'};
 
-    :hover,
-    :focus {
-      color: ${theme.colors.peach.light};
+    :hover:not(:disabled),
+    :focus:not(:disabled) {
       box-shadow: 0px 12px 16px 0px ${theme.colors.black}4D;
     }
 
-    :active {
-      color: ${theme.colors.peach.dark};
+    :active:not(:disabled) {
+      background-color: ${theme.colors.black3};
     }
   `,
   ghost: (theme: DefaultTheme) => css`
+    border: 2px solid;
     border-color: ${theme.colors.secondary.base};
-    color: ${theme.colors.secondary.base};
+    background-color: transparent;
 
-    :hover,
-    :focus {
+    :hover:not(:disabled),
+    :focus:not(:disabled) {
       border-color: ${theme.colors.secondary.light};
-      color: ${theme.colors.secondary.light};
     }
 
-    :active {
+    :active:not(:disabled) {
       border-color: ${theme.colors.secondary.dark};
-      color: ${theme.colors.secondary.dark};
+    }
+
+    :disabled {
+      border-color: ${theme.colors.disabled};
     }
   `
 }
@@ -76,11 +82,13 @@ const variants = {
 const sizes = {
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.size.xs};
-    padding: 12px 32px;
+    padding: 8px 24px;
+    max-height: 40px;
   `,
   medium: (theme: DefaultTheme) => css`
     font-size: ${theme.font.size.md};
-    padding: 8px 24px;
+    padding: 12px 32px;
+    max-height: 48px;
   `
 }
 
@@ -101,8 +109,12 @@ export const IconLoader = styled.i`
   }
 `
 
-export const Button = styled.button<IButtonProps>`
-  ${({ theme, variant, size, loading }) => css`
+type StyledButtonProps = Omit<ButtonProps, 'loading'> & {
+  $loading?: boolean
+}
+
+export const Button = styled.button<StyledButtonProps>`
+  ${({ theme, variant, size, $loading }) => css`
     font-family: ${theme.font.family.base};
     color: ${theme.colors.white};
     letter-spacing: -5%;
@@ -112,19 +124,28 @@ export const Button = styled.button<IButtonProps>`
     align-items: center;
     cursor: pointer;
     border-radius: ${theme.radius.md};
-    border: inset 2px transparent;
+    border: none;
     transition: all 0.2s ease-in-out;
     position: relative;
 
-    ${!!variant && variants[variant](theme)}
+    :disabled {
+      cursor: not-allowed;
+
+      &,
+      ${Icon} {
+        color: ${!$loading && theme.colors.white2};
+      }
+    }
+
+    ${!!variant && variants[variant](theme, $loading)}
     ${size && sizes[size](theme)}
-    ${loading &&
+
+    ${$loading &&
     css`
       color: transparent;
-      background-color: ${theme.colors.primary.dark};
+
       :hover,
       :focus {
-        background-color: ${theme.colors.primary.dark};
         box-shadow: none;
       }
 
@@ -132,17 +153,23 @@ export const Button = styled.button<IButtonProps>`
         display: flex;
         opacity: 1;
       }
+
+      ${Icon} {
+        opacity: 0;
+      }
     `}
   `}
 `
 
-interface IIconButtonStyleProps {
+type IconButtonStyleProps = Pick<ButtonProps, 'size'> & {
   pos?: 'left' | 'right'
 }
 
-export const Icon = styled.i<IIconButtonStyleProps>`
-  ${({ pos }) => css`
+export const Icon = styled.i<IconButtonStyleProps>`
+  ${({ pos, size }) => css`
     display: flex;
     margin: ${pos === 'right' ? '0 0 0 8px' : '0 8px 0 0'};
+    width: ${size === 'small' ? '16px' : '24px'};
+    height: ${size === 'small' ? '16px' : '24px'};
   `}
 `
