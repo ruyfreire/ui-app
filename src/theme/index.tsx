@@ -3,14 +3,14 @@ import { createGlobalStyle } from 'styled-components'
 export const theme = {
   colors: {
     primary: {
-      base: '#5561FF',
-      light: '#6B75FF',
-      dark: '#4B4FA0'
+      base: '#3643fc',
+      light: '#535FFF',
+      dark: '#44488B'
     },
     secondary: {
-      base: '#6E7198',
-      light: '#B9BCD9',
-      dark: '#4F5275'
+      base: '#60648B',
+      light: '#989BC1',
+      dark: '#45475A'
     },
     peach: {
       base: '#FF7387',
@@ -61,8 +61,13 @@ export const theme = {
       magma: 'linear-gradient(90.41deg, #F34E4E 0.01%, #FCA668 100%)',
       inferno: 'linear-gradient(90.41deg, #BE0000 0%, #FC7168 100%)'
     },
+    white: '#FFFFFF',
+    white2: '#ffffffcc',
+    white3: '#ffffff19',
     black: '#000000',
-    white: '#FFFFFF'
+    black2: '#0000007f',
+    black3: '#00000019',
+    disabled: '#6E719833'
   },
   spacing: {
     xs: '8px',
