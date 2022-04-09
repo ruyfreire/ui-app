@@ -26,7 +26,7 @@ export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 /**
- * Botão de ação
+ * Chip
  */
 export const Chip = ({
   children,

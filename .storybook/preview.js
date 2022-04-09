@@ -10,7 +10,20 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  layout: 'centered'
+  layout: 'centered',
+  backgrounds: {
+    default: 'dark',
+    values: [
+      {
+        name: 'dark',
+        value: theme.colors.background.section,
+      },
+      {
+        name: 'light',
+        value: theme.colors.white,
+      },
+    ],
+  }
 }
 
 export const decorators = [
