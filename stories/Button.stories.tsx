@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Button, ButtonProps } from '../src/components/Button'
+import { Button } from '../src/components/Button'
 
 const Svg = (
   <svg
