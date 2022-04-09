@@ -93,20 +93,22 @@ const sizes = {
 }
 
 export const IconLoader = styled.i`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  opacity: 0;
+  ${({ theme }) => css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ${theme.transitions.all};
+    opacity: 0;
 
-  svg {
-    animation: ${rotate} 1s linear infinite;
-  }
+    svg {
+      animation: ${rotate} 1s linear infinite;
+    }
+  `}
 `
 
 type StyledButtonProps = Omit<ButtonProps, 'loading'> & {
@@ -125,7 +127,7 @@ export const Button = styled.button<StyledButtonProps>`
     cursor: pointer;
     border-radius: ${theme.radius.md};
     border: none;
-    transition: all 0.2s ease-in-out;
+    transition: ${theme.transitions.all};
     position: relative;
 
     :disabled {
