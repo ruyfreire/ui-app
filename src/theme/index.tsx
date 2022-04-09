@@ -97,6 +97,9 @@ export const theme = {
       lg: '2rem',
       xl: '2.4rem'
     }
+  },
+  transitions: {
+    all: 'all 0.2s ease-in-out'
   }
 }
 
