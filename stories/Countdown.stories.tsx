@@ -51,6 +51,7 @@ export default {
 export const Default: ComponentStory<typeof Countdown> = (args) => (
   <Countdown {...args} />
 )
+Default.storyName = 'Padrão'
 
 export const Contando: ComponentStory<typeof Countdown> = (args) => {
   const [hour, setHour] = useState(0)

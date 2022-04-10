@@ -40,7 +40,7 @@ export default {
   }
 } as ComponentMeta<typeof Chip>
 
-export const Default: ComponentStory<typeof Chip> = (args) => {
+const Template: ComponentStory<typeof Chip> = (args) => {
   const [selected, setSelected] = useState(false)
 
   return (
@@ -52,15 +52,11 @@ export const Default: ComponentStory<typeof Chip> = (args) => {
   )
 }
 
-export const Icone: ComponentStory<typeof Chip> = (args) => {
-  const [selected, setSelected] = useState(false)
+export const Default = Template.bind({})
+Default.storyName = 'Padrão'
 
-  return (
-    <Chip
-      {...args}
-      icon={Svg}
-      onClick={() => setSelected(!selected)}
-      selected={args.selected || selected}
-    />
-  )
+export const Icon = Template.bind({})
+Icon.args = {
+  icon: Svg
 }
+Icon.storyName = 'Com ícone'

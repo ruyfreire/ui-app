@@ -46,18 +46,22 @@ export default {
   }
 } as ComponentMeta<typeof Button>
 
-export const Default: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} />
-)
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
-export const Icone: ComponentStory<typeof Button> = (args) => (
+export const Default = Template.bind({})
+Default.storyName = 'Padrão'
+
+export const Icon: ComponentStory<typeof Button> = (args) => (
   <div style={{ display: 'flex', gap: '10px' }}>
     <Button {...args} startIcon={Svg} />
 
     <Button {...args} endIcon={Svg} />
   </div>
 )
+Icon.storyName = 'Com ícone'
 
-export const Loading: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} loading />
-)
+export const Loading = Template.bind({})
+Loading.args = {
+  loading: true
+}
+Loading.storyName = 'Carregando'
