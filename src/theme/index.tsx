@@ -88,7 +88,7 @@ export const theme = {
     },
     weight: {
       normal: 400,
-      medium: 400,
+      medium: 500,
       semiBold: 600,
       bold: 700
     },
