@@ -97,6 +97,7 @@ export const Icon = styled.i`
 export const ErrorMessage = styled.p`
   ${({ theme }) => css`
     font-family: ${theme.font.family.base};
+    font-weight: ${theme.font.weight.medium};
     font-size: ${theme.font.size.md};
     color: ${theme.colors.peach.base};
     line-height: 1.5;
@@ -106,6 +107,7 @@ export const ErrorMessage = styled.p`
 export const Label = styled.label`
   ${({ theme }) => css`
     font-family: ${theme.font.family.base};
+    font-weight: ${theme.font.weight.medium};
     font-size: ${theme.font.size.md};
     color: ${theme.colors.white};
     line-height: 1.5;

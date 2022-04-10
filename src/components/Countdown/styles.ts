@@ -22,6 +22,7 @@ export const BoxTime = styled.div`
 export const TextTime = styled.h2`
   ${({ theme }) => css`
     font-family: ${theme.font.family.heading};
+    font-weight: ${theme.font.weight.bold};
     font-size: 4.8rem;
     color: ${theme.colors.white};
     line-height: 1.2;
@@ -31,6 +32,7 @@ export const TextTime = styled.h2`
 export const TextTimeInfo = styled.h2`
   ${({ theme }) => css`
     font-family: ${theme.font.family.base};
+    font-weight: ${theme.font.weight.bold};
     font-size: ${theme.font.size.md};
     color: ${theme.colors.white};
     line-height: 1.5;

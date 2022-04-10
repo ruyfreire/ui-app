@@ -87,7 +87,9 @@ export const theme = {
       base: '"Inter", Roboto, sans-serif'
     },
     weight: {
+      normal: 400,
       medium: 400,
+      semiBold: 600,
       bold: 700
     },
     size: {

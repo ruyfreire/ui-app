@@ -17,6 +17,7 @@ const sizes = {
 export const Chip = styled.div<ChipProps>`
   ${({ theme, size, disabled, selected }) => css`
     font-family: ${theme.font.family.base};
+    font-weight: ${theme.font.weight.medium};
     color: ${theme.colors.white2};
     max-height: 32px;
 

@@ -114,6 +114,7 @@ export const IconLoader = styled.i`
 export const Button = styled.button<ButtonProps>`
   ${({ theme, variant, size, isLoading }) => css`
     font-family: ${theme.font.family.base};
+    font-weight: ${theme.font.weight.semiBold};
     color: ${theme.colors.white};
     letter-spacing: -5%;
     line-height: 24px;
