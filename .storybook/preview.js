@@ -10,7 +10,6 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  layout: 'centered',
   backgrounds: {
     default: 'dark',
     values: [
