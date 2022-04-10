@@ -25,7 +25,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   /**
    * Exibir ícone de loader no lugar do texto do botão
    */
-  loading?: boolean
+  isLoading?: boolean
 }
 
 /**
@@ -37,10 +37,10 @@ export const Button = ({
   size = 'medium',
   startIcon,
   endIcon,
-  loading = false,
+  isLoading = false,
   ...props
 }: ButtonProps) => (
-  <S.Button variant={variant} size={size} $loading={loading} {...props}>
+  <S.Button variant={variant} size={size} isLoading={isLoading} {...props}>
     {startIcon && (
       <S.Icon size={size} pos="left">
         {startIcon}
@@ -49,7 +49,7 @@ export const Button = ({
 
     {children}
 
-    {loading && (
+    {isLoading && (
       <S.IconLoader>
         <svg
           xmlns="http://www.w3.org/2000/svg"

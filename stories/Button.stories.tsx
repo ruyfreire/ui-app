@@ -35,7 +35,7 @@ export default {
     endIcon: {
       type: 'symbol'
     },
-    loading: {
+    isLoading: {
       type: 'boolean',
       defaultValue: false
     },
@@ -62,6 +62,6 @@ Icon.storyName = 'Com ícone'
 
 export const Loading = Template.bind({})
 Loading.args = {
-  loading: true
+  isLoading: true
 }
 Loading.storyName = 'Carregando'

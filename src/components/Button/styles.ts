@@ -111,12 +111,8 @@ export const IconLoader = styled.i`
   `}
 `
 
-type StyledButtonProps = Omit<ButtonProps, 'loading'> & {
-  $loading?: boolean
-}
-
-export const Button = styled.button<StyledButtonProps>`
-  ${({ theme, variant, size, $loading }) => css`
+export const Button = styled.button<ButtonProps>`
+  ${({ theme, variant, size, isLoading }) => css`
     font-family: ${theme.font.family.base};
     color: ${theme.colors.white};
     letter-spacing: -5%;
@@ -135,14 +131,14 @@ export const Button = styled.button<StyledButtonProps>`
 
       &,
       ${Icon} {
-        color: ${!$loading && theme.colors.white2};
+        color: ${!isLoading && theme.colors.white2};
       }
     }
 
-    ${!!variant && variants[variant](theme, $loading)}
+    ${!!variant && variants[variant](theme, isLoading)}
     ${size && sizes[size](theme)}
 
-    ${$loading &&
+    ${isLoading &&
     css`
       color: transparent;
 

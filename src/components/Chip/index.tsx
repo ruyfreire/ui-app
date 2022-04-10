@@ -32,11 +32,9 @@ export const Chip = ({
   children,
   size = 'medium',
   icon,
-  disabled,
-  selected,
   ...props
 }: ChipProps) => (
-  <S.Chip size={size} disabled={disabled} selected={selected} {...props}>
+  <S.Chip size={size} {...props}>
     {icon && <S.Icon>{icon}</S.Icon>}
 
     {children}
