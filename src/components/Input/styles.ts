@@ -103,7 +103,7 @@ export const ErrorMessage = styled.p`
   `}
 `
 
-export const Label = styled.p`
+export const Label = styled.label`
   ${({ theme }) => css`
     font-family: ${theme.font.family.base};
     font-size: ${theme.font.size.md};

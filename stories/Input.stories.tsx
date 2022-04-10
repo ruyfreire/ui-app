@@ -52,6 +52,10 @@ export default {
     },
     icon: {
       type: 'symbol'
+    },
+    id: {
+      type: 'string',
+      defaultValue: 'input'
     }
   }
 } as ComponentMeta<typeof Input>

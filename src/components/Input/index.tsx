@@ -22,6 +22,10 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
    * Exibir um ícone ao lado esquerdo do texto do input
    */
   icon?: React.ReactNode
+  /**
+   * Atributo id para o input e usado para o html-for no label
+   */
+  id?: string
 }
 
 /**
@@ -32,13 +36,14 @@ export const Input = ({
   error,
   align = 'left',
   icon,
+  id,
   ...props
 }: InputProps) => (
   <S.Wrapper>
-    {label && <S.Label>{label}</S.Label>}
+    {label && <S.Label htmlFor={id}>{label}</S.Label>}
 
     <S.InputContainer>
-      <S.Input error={error} align={align} icon={!!icon} {...props} />
+      <S.Input error={error} align={align} icon={!!icon} id={id} {...props} />
 
       {icon && <S.Icon>{icon}</S.Icon>}
     </S.InputContainer>
