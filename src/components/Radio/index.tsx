@@ -7,7 +7,7 @@ import * as S from './styles'
  */
 export type RadioProps = React.InputHTMLAttributes<HTMLInputElement> & {
   /**
-   * Exibe texto de label ao lado direito do radio
+   * Exibe texto ao lado direito do radio
    */
   label?: string
   /**
@@ -15,7 +15,7 @@ export type RadioProps = React.InputHTMLAttributes<HTMLInputElement> & {
    */
   error?: boolean
   /**
-   * Exibir um ícone ao lado direito radio
+   * Exibir um ícone ao lado direito do radio
    */
   icon?: React.ReactNode
   /**

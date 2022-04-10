@@ -31,6 +31,9 @@ export const Input = styled.input<RadioProps>`
         + ${IconLabel},
         &
         + ${IconRadio}
+        + ${Label},
+        &
+        + ${IconRadio}
         + ${IconLabel}
         + ${Label} {
         color: ${theme.colors.white2};
