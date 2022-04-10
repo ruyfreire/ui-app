@@ -7,7 +7,6 @@ export const Input = styled.input<InputProps & { icon?: boolean }>`
     color: ${theme.colors.white};
     background-color: transparent;
     font-size: ${theme.font.size.md};
-    font-weight: 500;
     height: 100%;
 
     text-align: ${align};
