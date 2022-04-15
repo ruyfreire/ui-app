@@ -123,5 +123,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${theme.font.family.base};
     font-size: ${theme.font.size.md};
+    color: ${theme.colors.white2};
   }
 `
