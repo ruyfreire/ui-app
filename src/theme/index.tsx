@@ -83,7 +83,7 @@ export const theme = {
   },
   font: {
     family: {
-      heading: '"R-Flex", Roboto, sans-serif',
+      heading: '"Sora", Roboto, sans-serif',
       base: '"Inter", Roboto, sans-serif'
     },
     weight: {
