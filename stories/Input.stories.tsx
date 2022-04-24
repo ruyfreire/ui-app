@@ -52,10 +52,6 @@ export default {
     },
     icon: {
       type: 'symbol'
-    },
-    id: {
-      type: 'string',
-      defaultValue: 'input'
     }
   }
 } as ComponentMeta<typeof Input>
@@ -64,7 +60,12 @@ const Template: ComponentStory<typeof Input> = (args) => {
   const [value, setValue] = useState('')
 
   return (
-    <Input {...args} value={value} onChange={(e) => setValue(e.target.value)} />
+    <Input
+      id="input"
+      {...args}
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
   )
 }
 

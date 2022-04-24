@@ -22,10 +22,6 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
    * Exibir um ícone ao lado esquerdo do texto do input
    */
   icon?: React.ReactNode
-  /**
-   * Atributo id para o input e usado para o html-for no label
-   */
-  id?: string
 }
 
 /**
