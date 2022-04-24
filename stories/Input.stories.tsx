@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Input } from '../src/components/Input'
+import { Input } from '../src/components'
 
 const Svg = (
   <svg

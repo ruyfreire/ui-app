@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Checkbox } from '../src/components/Checkbox'
+import { Checkbox } from '../src/components'
 
 const Svg = (
   <svg

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Countdown } from '../src/components/Countdown'
+import { Countdown } from '../src/components'
 
 export default {
   title: 'Componentes/Countdown',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Chip } from '../src/components/Chip'
+import { Chip } from '../src/components'
 
 const Svg = (
   <svg

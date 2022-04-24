@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Radio } from '../src/components/Radio'
+import { Radio } from '../src/components'
 
 const Svg = (
   <svg
