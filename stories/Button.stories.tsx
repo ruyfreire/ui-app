@@ -42,6 +42,10 @@ export default {
     disabled: {
       type: 'boolean',
       defaultValue: false
+    },
+    fullWidth: {
+      type: 'boolean',
+      defaultValue: false
     }
   }
 } as ComponentMeta<typeof Button>

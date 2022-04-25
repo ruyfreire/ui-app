@@ -26,6 +26,10 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
    * Exibir ícone de loader no lugar do texto do botão
    */
   isLoading?: boolean
+  /**
+   * Deixa o botão com largura de 100%
+   */
+  fullWidth?: boolean
 }
 
 /**
@@ -38,9 +42,16 @@ export const Button = ({
   startIcon,
   endIcon,
   isLoading = false,
+  fullWidth = false,
   ...props
 }: ButtonProps) => (
-  <S.Button variant={variant} size={size} isLoading={isLoading} {...props}>
+  <S.Button
+    variant={variant}
+    size={size}
+    isLoading={isLoading}
+    fullWidth={fullWidth}
+    {...props}
+  >
     {startIcon && (
       <S.Icon size={size} pos="left">
         {startIcon}

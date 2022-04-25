@@ -112,7 +112,7 @@ export const IconLoader = styled.i`
 `
 
 export const Button = styled.button<ButtonProps>`
-  ${({ theme, variant, size, isLoading }) => css`
+  ${({ theme, variant, size, isLoading, fullWidth }) => css`
     font-family: ${theme.font.family.base};
     font-weight: ${theme.font.weight.semiBold};
     color: ${theme.colors.white};
@@ -121,6 +121,8 @@ export const Button = styled.button<ButtonProps>`
 
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: ${fullWidth ? '100%' : 'auto'};
     cursor: pointer;
     border-radius: ${theme.radius.md};
     border: none;
