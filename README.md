@@ -8,51 +8,55 @@
 
 ## Descrição
 
-🏗️ **`EM DESENVOLVIMENTO`** 🏗️
-
 Biblioteca de componentes react
-
-## Funcionalidades
-
-- [ ] Construir componentes básicos
-- [ ] Criar testes unitários
 
 ## Tecnologias
 
+- [Rollup](https://github.com/rollup/rollup)
 - [Typescript](https://github.com/microsoft/TypeScript)
-- [jest](https://github.com/facebook/jest)
+- [Storybook](https://github.com/storybookjs/storybook)
+- [Styled-components](https://github.com/styled-components/styled-components)
 - [ESlint](https://github.com/eslint/eslint)
 - [Prettier](https://github.com/prettier/prettier)
 
 ## Diretórios
 
 ```bash
-└── src
-    └── index.ts # Arquivo principal com export de todos componentes
+
+├── .storybook # Configurações gerais storybook
+├── dist # Build do projeto
+├── public # Arquivos públicos do storybook
+├── src
+│   ├── components # Pasta de componentes
+│   ├── theme # Tema do projeto
+│   └── index.ts # Arquivo principal com export geral
+└── stories # Storybook dos componentes do projeto
+└── rollup.config.js # Configurações do Rollup
 ```
 
 ## Instalar
 
 ```bash
-yarn install
+npm install
 ```
-\* Recomendado usar yarn para aproveitar o **yarn.lock**
+\* Recomendado usar npm para aproveitar o **package-lock.json**
 
-## Rodar projeto
+## Rodar projeto (Storybook)
 
 ```bash
 # Iniciar storybook
-yarn storybook
+npm run storybook
 ```
 
 ## Build
 
 ```bash
+# Geral pasta dist do projeto
 yarn build
 ```
 
-## Rodar testes
+## Rodar lint
 
 ```bash
-yarn test
+npm run lint
 ```

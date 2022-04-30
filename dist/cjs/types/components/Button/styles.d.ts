@@ -1,8 +1,15 @@
+/// <reference types="react" />
 import { DefaultTheme } from 'styled-components';
-import { IButtonProps } from '.';
-export declare const Button: import("styled-components").StyledComponent<"button", DefaultTheme, IButtonProps, never>;
-interface IIconButtonStyleProps {
-    pos?: 'left' | 'right';
-}
-export declare const Icon: import("styled-components").StyledComponent<"i", DefaultTheme, IIconButtonStyleProps, never>;
-export {};
+import { ButtonProps } from '.';
+export declare const IconLoader: import("styled-components").StyledComponent<"i", DefaultTheme, {}, never>;
+export declare const Button: import("styled-components").StyledComponent<"button", DefaultTheme, import("react").ButtonHTMLAttributes<HTMLButtonElement> & {
+    variant?: "primary" | "secondary" | "tertiary" | "ghost" | undefined;
+    size?: "small" | "medium" | undefined;
+    startIcon?: import("react").ReactNode;
+    endIcon?: import("react").ReactNode;
+    isLoading?: boolean | undefined;
+    fullWidth?: boolean | undefined;
+}, never>;
+export declare const Icon: import("styled-components").StyledComponent<"i", DefaultTheme, Pick<ButtonProps, "size"> & {
+    pos?: "left" | "right" | undefined;
+}, never>;
