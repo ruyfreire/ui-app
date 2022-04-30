@@ -36,7 +36,6 @@ export type CountdownProps = React.HTMLAttributes<HTMLDivElement> & {
  * Contador com titulo, tempo e subtitulo
  */
 export const Countdown = ({
-  children,
   hour = 0,
   minute = 0,
   second = 0,

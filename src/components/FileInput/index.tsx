@@ -69,7 +69,7 @@ export const FileInput = ({
     }
   }
 
-  const fileName = !!added ? added[0].name.split('.') : ['']
+  const fileName = added ? added[0].name.split('.') : ['']
 
   return (
     <S.Wrapper
@@ -88,7 +88,7 @@ export const FileInput = ({
         onChange={handleChange}
       />
 
-      {!!added ? (
+      {added ? (
         <>
           <S.IconDelete onClick={handleDelete}>
             <svg

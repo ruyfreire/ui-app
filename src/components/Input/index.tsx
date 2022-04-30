@@ -15,6 +15,10 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
    */
   error?: string
   /**
+   * ID para ser usado no input e no html-for do label
+   */
+  id?: string
+  /**
    * Alinhamento do texto dentro do input
    */
   align?: 'left' | 'center' | 'right'

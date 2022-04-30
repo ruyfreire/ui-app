@@ -29,7 +29,7 @@ export const Wrapper = styled.div<WrapperProps>`
           max-width: 290px;
         `}
 
-    background-color: ${imageBg ? imageBg : theme.colors.background.card};
+    background-color: ${imageBg || theme.colors.background.card};
   `}
 `
 
