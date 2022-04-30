@@ -14,10 +14,13 @@ import { theme } from '../src/theme'
 Todo o tema é gerado usando a biblioteca `styled-components`, e devem ser usado em conjunto
 
 - [Cores](#cores)
-- [Tamanho](#tamanho)
-- [Peso de fonte](#peso)
+- [Fonte](#fonte)
+  - [Família](#família)
+  - [Tamanho](#tamanho)
+  - [Peso](#peso)
 - [Espaçamento](#espaçamento)
 - [Raio](#raio)
+- [Transição](#transição)
 - [Estilo Global](#estilo-global)
 
 <div style={{ height: '50px' }} />
@@ -46,99 +49,111 @@ Todo o tema é gerado usando a biblioteca `styled-components`, e devem ser usado
     title="Secundária"
     subtitle="theme.colors.secondary[type]"
     colors={{
-      light: theme.colors.primary.light,
-      base: theme.colors.primary.base,
-      dark: theme.colors.primary.dark
+      light: theme.colors.secondary.light,
+      base: theme.colors.secondary.base,
+      dark: theme.colors.secondary.dark
     }}
   />
   <ColorItem
-    title="Crítico/Cancelar"
-    subtitle="theme.colors.danger[type]"
+    title="Informação"
+    subtitle="theme.colors.blueberry[type]"
     colors={{
-      light: theme.colors.danger.light,
-      base: theme.colors.danger.base,
-      dark: theme.colors.danger.dark
-    }}
-  />
-  <ColorItem
-    title="Aviso"
-    subtitle="theme.colors.warning[type]"
-    colors={{
-      light: theme.colors.warning.light,
-      base: theme.colors.warning.base,
-      dark: theme.colors.warning.dark
+      light: theme.colors.blueberry.light,
+      base: theme.colors.blueberry.base,
+      dark: theme.colors.blueberry.dark
     }}
   />
   <ColorItem
     title="Sucesso/Confirmar"
-    subtitle="theme.colors.success[type]"
+    subtitle="theme.colors.mint[type]"
     colors={{
-      light: theme.colors.success.light,
-      base: theme.colors.success.base,
-      dark: theme.colors.success.dark
+      light: theme.colors.mint.light,
+      base: theme.colors.mint.base,
+      dark: theme.colors.mint.dark
     }}
   />
   <ColorItem
-    title="Sombra"
-    subtitle="theme.colors.gray[type]"
+    title="Aviso/Alerta"
+    subtitle="theme.colors.banana[type]"
     colors={{
-      light: theme.colors.gray.light,
-      base: theme.colors.gray.base,
-      dark: theme.colors.gray.dark
+      light: theme.colors.banana.light,
+      base: theme.colors.banana.base,
+      dark: theme.colors.banana.dark
     }}
   />
   <ColorItem
-    title="Texto"
-    subtitle="theme.colors.text"
-    colors={[theme.colors.text]}
+    title="Crítico/Cancelar"
+    subtitle="theme.colors.peach[type]"
+    colors={{
+      light: theme.colors.peach.light,
+      base: theme.colors.peach.base,
+      dark: theme.colors.peach.dark
+    }}
   />
   <ColorItem
-    title="Preto"
-    subtitle="theme.colors.black"
-    colors={[theme.colors.black]}
-  />
-  <ColorItem
-    title="Off White (Quase branco)"
-    subtitle="theme.colors.offWhite"
-    colors={[theme.colors.offWhite]}
+    title="Cor de fundo"
+    subtitle="theme.colors.background[type]"
+    colors={{
+      primary: theme.colors.background.primary,
+      section: theme.colors.background.section,
+      card: theme.colors.background.card,
+      cardSection: theme.colors.background.cardSection
+    }}
   />
   <ColorItem
     title="Branco"
     subtitle="theme.colors.white"
-    colors={[theme.colors.white]}
+    colors={{
+      white: theme.colors.white,
+      white2: theme.colors.white2,
+      white3: theme.colors.white3
+    }}
+  />
+  <ColorItem
+    title="Preto"
+    subtitle="theme.colors.black"
+    colors={{
+      black: theme.colors.black,
+      black2: theme.colors.black2,
+      black3: theme.colors.black3
+    }}
   />
 </ColorPalette>
 
-## Tamanho
+## Fonte
 
-Utilzado em font-size
+### Família
 
-O `html` possui
+| Nome                      | Valor                       |
+| ------------------------- | --------------------------- |
+| theme.font.family.heading | "Sora", Roboto, sans-serif  |
+| theme.font.family.base    | "Inter", Roboto, sans-serif |
 
-| Nome            | Tamanho |
-| --------------- | ------- |
-| theme.sizes.xxs | 1rem    |
-| theme.sizes.xs  | 1.2rem  |
-| theme.sizes.md  | 1.6rem  |
-| theme.sizes.lg  | 2rem    |
-| theme.sizes.xl  | 2.4rem  |
-| theme.sizes.xxl | 2.8rem  |
+### Tamanho
 
-**Fontes**
+`o GlobalStyle aplica um font-size de 10px no body para uma conversão mais fácil do rem no corpo da página`
+
+| Nome                 | Tamanho        |
+| -------------------- | -------------- |
+| theme.font.size.xs   | 1.2rem (12px)  |
+| theme.font.size.sm   | 1.4rem (14px)  |
+| theme.font.size.md   | 1.6rem (16px)  |
+| theme.font.size.lg   | 2rem   (20px)  |
+| theme.font.size.xl   | 2.4rem (24px)  |
 
 <Typeset
   fontSizes={['1rem', '1.2rem', '1.6rem', '2rem', '2.4rem', '2.8rem']}
   sampleText="Lorem Ipsum"
 />
 
-## Peso
+### Peso
 
-| Nome                     | Valor |
-| ------------------------ | ----- |
-| theme.fontWeights.light  | 100   |
-| theme.fontWeights.normal | 300   |
-| theme.fontWeights.medium | 400   |
-| theme.fontWeights.bold   | 700   |
+| Nome                       | Valor |
+| -------------------------- | ----- |
+| theme.font.weight.normal   | 400   |
+| theme.font.weight.medium   | 500   |
+| theme.font.weight.semiBold | 600   |
+| theme.font.weight.bold     | 700   |
 
 ## Espaçamento
 
@@ -155,32 +170,36 @@ Utilizado em paddings e margins
 
 | Nome             | Valor |
 | ---------------- | ----- |
-| theme.spacing.xs | 2px   |
-| theme.spacing.md | 4px   |
-| theme.spacing.lg | 8px   |
+| theme.spacing.xs | 4px   |
+| theme.spacing.sm | 8px   |
+| theme.spacing.md | 12px  |
+| theme.spacing.lg | 24px  |
+
+## Transição
+
+| Nome                  | Valor                  |
+| --------------------- | ---------------------- |
+| theme.transitions.all | all 0.2s ease-in-out   |
 
 ## Estilo Global
 
-Estilo global aplicado a cima do tema para normalizar o css da página
+Estilo global para normalizar o css da página e adptar o font size para o tamanho do rem
 
 ```css
-* {
-  box-sizing: border-box;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+  }
 
-html {
-  /**
-  * Transforma a fonte base da página para melhorar a escrita em 'rem',
-  * fazendo 1.6rem = 16px
-  */
-  font-size: 10px;
-}
+  html {
+    font-size: 10px;
+  }
 
-body {
-  font-family: ${theme.font.family.base};
-  font-size: ${theme.font.size.md};
-}
+  body {
+    font-family: ${theme.font.family.base};
+    font-size: ${theme.font.size.md};
+    color: ${theme.colors.white2};
+  }
 ```
