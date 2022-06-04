@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { useArgs } from '@storybook/client-api'
 
 import { Toast, Button } from '../src/components'
 
@@ -40,15 +41,15 @@ Default.parameters = {
 }
 
 const TemplateOpen: ComponentStory<typeof Toast> = (args) => {
-  const [show, setShow] = useState(false)
+  const [, updateArgs] = useArgs()
 
   return (
     <>
-      <Button onClick={() => setShow(!show)}>
-        {show ? 'Fechar Toast' : 'Abrir Toast'}
+      <Button onClick={() => updateArgs({ show: !args.show })}>
+        {args.show ? 'Fechar Toast' : 'Abrir Toast'}
       </Button>
 
-      <Toast {...args} show={args.show || show} />
+      <Toast {...args} />
     </>
   )
 }

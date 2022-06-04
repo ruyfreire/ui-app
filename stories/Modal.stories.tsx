@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { useArgs } from '@storybook/client-api'
 
 import { Modal, Button } from '../src/components'
 
@@ -93,15 +94,13 @@ export default {
 } as ComponentMeta<typeof Modal>
 
 const Template: ComponentStory<typeof Modal> = (args) => {
-  const [open, setOpen] = useState(false)
+  const [, updateArgs] = useArgs()
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Abrir modal</Button>
+      <Button onClick={() => updateArgs({ open: true })}>Abrir modal</Button>
 
-      <Modal {...args} open={open || args.open} onClose={() => setOpen(false)}>
-        {args.children}
-      </Modal>
+      <Modal {...args} onClose={() => updateArgs({ open: false })} />
     </>
   )
 }

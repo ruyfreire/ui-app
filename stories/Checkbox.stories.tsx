@@ -54,7 +54,7 @@ const Template: ComponentStory<typeof Checkbox> = (args) => {
         id="sim"
         value="sim"
         checked={args.checked || checked.includes('sim')}
-        onChange={(e) => {
+        onChange={() => {
           if (checked.includes('sim')) {
             setChecked([...checked.filter((item) => item !== 'sim')])
           } else {
@@ -68,7 +68,7 @@ const Template: ComponentStory<typeof Checkbox> = (args) => {
         id="nao"
         value="nao"
         checked={args.checked || checked.includes('nao')}
-        onChange={(e) => {
+        onChange={() => {
           if (checked.includes('nao')) {
             setChecked([...checked.filter((item) => item !== 'nao')])
           } else {

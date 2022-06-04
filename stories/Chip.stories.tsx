@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { useArgs } from '@storybook/client-api'
 
 import { Chip } from '../src/components'
 
@@ -41,14 +42,10 @@ export default {
 } as ComponentMeta<typeof Chip>
 
 const Template: ComponentStory<typeof Chip> = (args) => {
-  const [selected, setSelected] = useState(false)
+  const [, updateArgs] = useArgs()
 
   return (
-    <Chip
-      {...args}
-      onClick={() => setSelected(!selected)}
-      selected={args.selected || selected}
-    />
+    <Chip {...args} onClick={() => updateArgs({ selected: !args.selected })} />
   )
 }
 

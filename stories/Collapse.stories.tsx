@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { useArgs } from '@storybook/client-api'
 
 import { Collapse } from '../src/components'
 
@@ -24,14 +25,10 @@ export default {
 } as ComponentMeta<typeof Collapse>
 
 const Template: ComponentStory<typeof Collapse> = (args) => {
-  const [open, setOpen] = useState(false)
+  const [, updateArgs] = useArgs()
 
   return (
-    <Collapse
-      {...args}
-      open={args.open || open}
-      toggleOpen={() => setOpen(!open)}
-    />
+    <Collapse {...args} toggleOpen={() => updateArgs({ open: !args.open })} />
   )
 }
 
