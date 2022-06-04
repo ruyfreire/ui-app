@@ -1,3 +1,5 @@
-export { Button } from './components/Button'
-export { Header } from './components/Header'
-export { Page } from './components/Page'
+// Componentes
+export * from './components'
+
+// Tema
+export * from './theme'

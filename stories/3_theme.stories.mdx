@@ -1,0 +1,205 @@
+import {
+  Meta,
+  ColorPalette,
+  ColorItem,
+  Typeset,
+  Story
+} from '@storybook/addon-docs'
+import { theme } from '../src/theme'
+
+<Meta title="Introdução/Tema" />
+
+# Tema padrão
+
+Todo o tema é gerado usando a biblioteca `styled-components`, e devem ser usado em conjunto
+
+- [Cores](#cores)
+- [Fonte](#fonte)
+  - [Família](#família)
+  - [Tamanho](#tamanho)
+  - [Peso](#peso)
+- [Espaçamento](#espaçamento)
+- [Raio](#raio)
+- [Transição](#transição)
+- [Estilo Global](#estilo-global)
+
+<div style={{ height: '50px' }} />
+
+<style>
+  {`
+    html {
+      font-size: 10px;
+    }
+  `}
+</style>
+
+## Cores
+
+<ColorPalette>
+  <ColorItem
+    title="Primária"
+    subtitle="theme.colors.primary[type]"
+    colors={{
+      light: theme.colors.primary.light,
+      base: theme.colors.primary.base,
+      dark: theme.colors.primary.dark
+    }}
+  />
+  <ColorItem
+    title="Secundária"
+    subtitle="theme.colors.secondary[type]"
+    colors={{
+      light: theme.colors.secondary.light,
+      base: theme.colors.secondary.base,
+      dark: theme.colors.secondary.dark
+    }}
+  />
+  <ColorItem
+    title="Informação"
+    subtitle="theme.colors.blueberry[type]"
+    colors={{
+      light: theme.colors.blueberry.light,
+      base: theme.colors.blueberry.base,
+      dark: theme.colors.blueberry.dark
+    }}
+  />
+  <ColorItem
+    title="Sucesso/Confirmar"
+    subtitle="theme.colors.mint[type]"
+    colors={{
+      light: theme.colors.mint.light,
+      base: theme.colors.mint.base,
+      dark: theme.colors.mint.dark
+    }}
+  />
+  <ColorItem
+    title="Aviso/Alerta"
+    subtitle="theme.colors.banana[type]"
+    colors={{
+      light: theme.colors.banana.light,
+      base: theme.colors.banana.base,
+      dark: theme.colors.banana.dark
+    }}
+  />
+  <ColorItem
+    title="Crítico/Cancelar"
+    subtitle="theme.colors.peach[type]"
+    colors={{
+      light: theme.colors.peach.light,
+      base: theme.colors.peach.base,
+      dark: theme.colors.peach.dark
+    }}
+  />
+  <ColorItem
+    title="Cor de fundo"
+    subtitle="theme.colors.background[type]"
+    colors={{
+      primary: theme.colors.background.primary,
+      section: theme.colors.background.section,
+      card: theme.colors.background.card,
+      cardSection: theme.colors.background.cardSection
+    }}
+  />
+  <ColorItem
+    title="Branco"
+    subtitle="theme.colors.white"
+    colors={{
+      white: theme.colors.white,
+      white2: theme.colors.white2,
+      white3: theme.colors.white3
+    }}
+  />
+  <ColorItem
+    title="Preto"
+    subtitle="theme.colors.black"
+    colors={{
+      black: theme.colors.black,
+      black2: theme.colors.black2,
+      black3: theme.colors.black3
+    }}
+  />
+</ColorPalette>
+
+## Fonte
+
+### Família
+
+| Nome                      | Valor                       |
+| ------------------------- | --------------------------- |
+| theme.font.family.heading | "Sora", Roboto, sans-serif  |
+| theme.font.family.base    | "Inter", Roboto, sans-serif |
+
+### Tamanho
+
+`o GlobalStyle aplica um font-size de 10px no body para uma conversão mais fácil do rem no corpo da página`
+
+| Nome                 | Tamanho        |
+| -------------------- | -------------- |
+| theme.font.size.xs   | 1.2rem (12px)  |
+| theme.font.size.sm   | 1.4rem (14px)  |
+| theme.font.size.md   | 1.6rem (16px)  |
+| theme.font.size.lg   | 2rem   (20px)  |
+| theme.font.size.xl   | 2.4rem (24px)  |
+
+<Typeset
+  fontSizes={['1rem', '1.2rem', '1.6rem', '2rem', '2.4rem', '2.8rem']}
+  sampleText="Lorem Ipsum"
+/>
+
+### Peso
+
+| Nome                       | Valor |
+| -------------------------- | ----- |
+| theme.font.weight.normal   | 400   |
+| theme.font.weight.medium   | 500   |
+| theme.font.weight.semiBold | 600   |
+| theme.font.weight.bold     | 700   |
+
+## Espaçamento
+
+Utilizado em paddings e margins
+
+| Nome             | Tamanho |
+| ---------------- | ------- |
+| theme.spacing.xs | 8px     |
+| theme.spacing.md | 16px    |
+| theme.spacing.lg | 24px    |
+| theme.spacing.xl | 32px    |
+
+## Raio
+
+| Nome             | Valor |
+| ---------------- | ----- |
+| theme.spacing.xs | 4px   |
+| theme.spacing.sm | 8px   |
+| theme.spacing.md | 12px  |
+| theme.spacing.lg | 24px  |
+
+## Transição
+
+| Nome                  | Valor                  |
+| --------------------- | ---------------------- |
+| theme.transitions.all | all 0.2s ease-in-out   |
+
+## Estilo Global
+
+Estilo global para normalizar o css da página e adptar o font size para o tamanho do rem
+
+```css
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 10px;
+  }
+
+  body {
+    font-family: ${theme.font.family.base};
+    font-size: ${theme.font.size.md};
+    color: ${theme.colors.white2};
+  }
+```

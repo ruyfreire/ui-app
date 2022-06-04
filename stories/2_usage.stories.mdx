@@ -1,0 +1,67 @@
+import {
+  Meta,
+  ColorPalette,
+  ColorItem,
+  Typeset,
+  Story
+} from '@storybook/addon-docs'
+import { theme } from '../src/theme'
+
+<Meta title="_Introdução/Como Usar" />
+
+# Instalar via Github
+
+```bash
+# Yarn
+yarn add https://github.com/ruyfreire/ui-app.git
+
+# NPM
+npm install https://github.com/ruyfreire/ui-app.git
+```
+
+### Instalando uma versão especifica pela tag da release
+
+```bash
+yarn add https://github.com/ruyfreire/ui-app.git#v1.0.0
+```
+
+_Lista completa de tags das releases: [Tags](https://github.com/ruyfreire/ui-app/tags)_
+
+# Adicionando fontes
+
+Fontes necessárias:
+- Sora
+- Inter
+
+Ambas as fontes podem ser encontradas no Google fonts
+
+Importar fontes com ao menos os pesos `400/regular`, `500/medium`, `600/semi-bold` e `700/bold`
+
+# Biblioteca de dependências
+
+Instalar biblioteca para usar as funcionalidades da UI-App
+
+```bash
+yarn add styled-components
+```
+
+# Usar na aplicação
+
+```jsx
+// App.jsx
+import { ThemeProvider } from 'styled-components'
+import { theme, GlobalStyle, Button } from 'ui-app'
+
+export const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {/* Seu código aqui */}
+    </ThemeProvider>
+  )
+}
+```
+
+Todas as regras de uso do tema seguem os padrões do `styled-components`
+
+Para mais informações sobre seu uso, acessar a [documentação](https://github.com/styled-components/styled-components)
