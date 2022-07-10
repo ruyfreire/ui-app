@@ -26,6 +26,10 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
    * Exibir um ícone ao lado esquerdo do texto do input
    */
   icon?: React.ReactNode
+  /**
+   * Deixar o input com largura total
+   */
+  fullWidth?: boolean
 }
 
 /**

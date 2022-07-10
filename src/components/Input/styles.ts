@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { InputProps } from '.'
 
 export const Input = styled.input<InputProps & { icon?: boolean }>`
-  ${({ theme, error, align, icon }) => css`
+  ${({ theme, error, align, icon, fullWidth }) => css`
     font-family: ${theme.font.family.base};
     color: ${theme.colors.white};
     background-color: transparent;
@@ -58,6 +58,11 @@ export const Input = styled.input<InputProps & { icon?: boolean }>`
         + ${Icon} {
         color: ${theme.colors.peach.base};
       }
+    `}
+
+    ${fullWidth &&
+    css`
+      width: 100%;
     `}
   `}
 `
