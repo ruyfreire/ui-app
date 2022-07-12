@@ -57,3 +57,9 @@ Icon.args = {
   icon: Svg
 }
 Icon.storyName = 'Com ícone'
+
+export const ButtonClose = Template.bind({})
+ButtonClose.args = {
+  close: () => false
+}
+ButtonClose.storyName = 'Botão de fechar'

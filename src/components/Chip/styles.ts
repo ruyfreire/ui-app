@@ -68,3 +68,30 @@ export const Icon = styled.i`
   width: 16px;
   margin: 0 8px 0 0;
 `
+
+type IconCloseProps = Pick<ChipProps, 'disabled'>
+
+export const IconClose = styled.i<IconCloseProps>`
+  ${({ theme, disabled }) => css`
+    display: flex;
+    margin: 0 0 0 8px;
+    transition: ${theme.transitions.all};
+    border-radius: 50%;
+    padding: 4px;
+    height: 18px;
+    width: 18px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    ${!disabled &&
+    css`
+      :hover,
+      :focus {
+        background-color: ${theme.colors.peach.light};
+      }
+    `}
+  `}
+`
