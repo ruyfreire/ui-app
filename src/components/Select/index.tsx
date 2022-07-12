@@ -1,28 +1,27 @@
 import React, { useEffect, useRef, useState } from 'react'
 
+import { Chip } from '../Chip'
+
 import * as S from './styles'
 
-type Option = {
-  label: string
-  value: string | number
-}
+type Option = string | number | object
 
 /**
- * Props para o componente Dropdown
+ * Props para o componente Select
  */
-export type DropdownProps = {
+export type SelectProps = {
   /**
-   * Lista de opções para exibir no dropdown
+   * Lista de opções para exibir no select
    */
-  options: Option[]
+  options: Array<Option>
   /**
    * Valor selecionado
    */
-  value: Option['value']
+  value: Option | Array<Option>
   /**
    * Função executada ao selecionar uma opção
    */
-  onChange?: (option: Option) => void
+  onChange?: (option: Option | Array<Option>) => void
   /**
    * Placeholder para o dropdown sem nenhuma opção selecionada
    */
@@ -31,19 +30,34 @@ export type DropdownProps = {
    * Texto exibido no lugar da lista caso ela seja vazia
    */
   emptyOptionsText?: string
+  /**
+   * Função para formatar o label que deve ser exibido
+   */
+  getOptionLabel?: (option: Option) => string | number
+  /**
+   * Controla se o item selecionado deve ou não exibir na lista de opções aberta
+   */
+  optionSelected?: boolean
+  /**
+   * Possibilita selecionar vários itens por vez
+   */
+  multi?: boolean
 }
 
 /**
- * Dropdown para lista de opções
+ * Select para lista de opções
  */
-export const Dropdown = ({
+export const Select = ({
   options = [],
+  multi = false,
+  optionSelected = false,
   value,
   onChange,
   placeholder = 'Selecione...',
   emptyOptionsText = 'Nenhuma opção',
+  getOptionLabel,
   ...props
-}: DropdownProps) => {
+}: SelectProps) => {
   const listRef = useRef<HTMLUListElement>(null)
   const wrapperRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = useState(false)
@@ -51,6 +65,48 @@ export const Dropdown = ({
   const handleClickOutside = (e: MouseEvent) => {
     if (!wrapperRef.current?.contains(e.target as Node)) {
       setOpen(false)
+    }
+  }
+
+  const setLabel = (value: Option) => {
+    return getOptionLabel ? getOptionLabel(value) : value
+  }
+
+  const emptyValue = (value: Option | Array<Option>) => {
+    if (Array.isArray(value)) {
+      return value.length === 0
+    }
+
+    if (typeof value === 'object') {
+      return Object.keys(value).keys.length === 0
+    }
+
+    return !value
+  }
+
+  const selectedOption = (option: Option) => {
+    if (emptyValue(value)) {
+      return false
+    }
+
+    if (Array.isArray(value)) {
+      return !!value.find(
+        (currentValue) =>
+          JSON.stringify(currentValue) === JSON.stringify(option)
+      )
+    }
+
+    return JSON.stringify(value) === JSON.stringify(option)
+  }
+
+  const removeOption = (option: Option) => {
+    if (Array.isArray(value)) {
+      const newValue = value.filter(
+        (currentValue) =>
+          JSON.stringify(currentValue) !== JSON.stringify(option)
+      )
+
+      onChange && onChange(newValue)
     }
   }
 
@@ -71,7 +127,27 @@ export const Dropdown = ({
       {...props}
     >
       <S.BoxSelected>
-        <S.Selected empty={!value}>{value || placeholder}</S.Selected>
+        {multi && Array.isArray(value) ? (
+          value.length > 0 ? (
+            <S.ContentSelectedMulti>
+              {value.map((option, index) => (
+                <Chip
+                  key={index}
+                  size="small"
+                  close={() => removeOption(option)}
+                >
+                  {setLabel(option)}
+                </Chip>
+              ))}
+            </S.ContentSelectedMulti>
+          ) : (
+            <S.Selected empty>{placeholder}</S.Selected>
+          )
+        ) : (
+          <S.Selected empty={emptyValue(value)}>
+            {value ? setLabel(value) : placeholder}
+          </S.Selected>
+        )}
 
         <S.Icon>
           <svg
@@ -91,16 +167,31 @@ export const Dropdown = ({
 
       <S.List ref={listRef}>
         {options.length > 0 ? (
-          options.map((option) => (
-            <S.Option
-              key={option.value}
-              onClick={() => {
-                onChange && onChange(option)
-              }}
-            >
-              {option.label}
-            </S.Option>
-          ))
+          options
+            .filter((option) => {
+              if (optionSelected || emptyValue(value)) {
+                return true
+              }
+
+              return !selectedOption(option)
+            })
+            .map((option, index) => (
+              <S.Option
+                key={index}
+                className={selectedOption(option) ? 'selected' : ''}
+                onClick={() => {
+                  if (onChange) {
+                    if (multi && Array.isArray(value)) {
+                      onChange([...value, option])
+                    } else {
+                      onChange(option)
+                    }
+                  }
+                }}
+              >
+                {setLabel(option)}
+              </S.Option>
+            ))
         ) : (
           <S.Option disabled>{emptyOptionsText}</S.Option>
         )}

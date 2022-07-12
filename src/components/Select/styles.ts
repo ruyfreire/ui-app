@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
-import { DropdownProps } from '.'
+import { SelectProps } from '.'
 
 type WrapperProps = Omit<
-  DropdownProps,
+  SelectProps,
   'value' | 'options' | 'defaultValue' | 'onChange' | 'emptyOptionsText'
 > & {
   listHeight?: number
@@ -78,6 +78,10 @@ export const Option = styled.li<OptionProps>`
             background-color: ${theme.colors.background.cardSection};
           }
         `}
+
+    &.selected {
+      background-color: ${theme.colors.background.cardSection};
+    }
   `}
 `
 
@@ -86,7 +90,8 @@ export const BoxSelected = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
+    padding: 10px 20px;
+    min-height: 56px;
     cursor: pointer;
     border-radius: 8px;
     z-index: 1;
@@ -108,6 +113,33 @@ export const Selected = styled.p<SelectedProps>`
     font-weight: ${theme.font.weight.semiBold};
     line-height: 1.5;
     color: ${empty ? theme.colors.white3 : theme.colors.white};
+  `}
+`
+
+export const ContentSelectedMulti = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: ${theme.spacing.xs};
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 1;
+
+    &:hover {
+      background-color: ${theme.colors.background.cardSection};
+    }
+  `}
+`
+
+export const SelectedMulti = styled.p<SelectedProps>`
+  ${({ theme }) => css`
+    font-family: ${theme.font.family.base};
+    font-size: ${theme.font.size.md};
+    font-weight: ${theme.font.weight.semiBold};
+    line-height: 1.5;
+    color: ${theme.colors.white};
+
+    background-color: ${theme.colors.white2};
   `}
 `
 
