@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Dropdown } from '../src/components'
+import { Select } from '../src/components'
 
 export default {
-  title: 'Componentes/Dropdown',
-  component: Dropdown,
+  title: 'Componentes/Select',
+  component: Select,
   argTypes: {
     options: {
       defaultValue: [
@@ -27,21 +27,21 @@ export default {
       type: 'string'
     }
   }
-} as ComponentMeta<typeof Dropdown>
+} as ComponentMeta<typeof Select>
 
-const Template: ComponentStory<typeof Dropdown> = (args) => {
+const Template: ComponentStory<typeof Select> = (args) => {
   const [value, setValue] = useState<string | number>('')
 
   return (
     <>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <Dropdown
+        <Select
           {...args}
           value={value}
           onChange={(opt) => setValue(opt.value)}
         />
 
-        <Dropdown {...args} options={[]} />
+        <Select {...args} options={[]} />
       </div>
     </>
   )
