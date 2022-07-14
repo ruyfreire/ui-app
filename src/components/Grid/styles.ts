@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components'
 import {
   calcSpacing,
-  setSpacingStyles,
+  setSpacingMargin,
+  setSpacingPadding,
   SpacingTypes
 } from '../../utils/styles/spacings'
 
@@ -51,7 +52,8 @@ export const Wrapper = styled.div<GridProps>`
           align-items: ${alignItems};
           gap: ${gap}px;
 
-          ${setSpacingStyles(props)};
+          ${setSpacingMargin(props)};
+          ${setSpacingPadding(props)};
         `
       : css`
           display: block;

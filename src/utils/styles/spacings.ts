@@ -5,9 +5,9 @@ export const calcSpacing = (value: number) => {
 }
 
 /**
- * Types de espaçamento
+ * Types de espaçamento padding
  */
-export type SpacingTypes = {
+export type PaddingTypes = {
   /**
    * padding
    */
@@ -28,6 +28,12 @@ export type SpacingTypes = {
    * padding-left
    */
   pl?: number
+}
+
+/**
+ * Types de espaçamento margin
+ */
+export type MarginTypes = {
   /**
    * margin
    */
@@ -51,9 +57,42 @@ export type SpacingTypes = {
 }
 
 /**
- * Inserir CSS de espaçamento (padding e margin)
+ * Types de espaçamento
  */
-export const setSpacingStyles = (props: SpacingTypes) => {
+export type SpacingTypes = PaddingTypes & MarginTypes
+
+/**
+ * Inserir CSS de espaçamento margin
+ */
+export const setSpacingMargin = (props: MarginTypes) => {
+  return css`
+    ${props.m &&
+    css`
+      margin: ${calcSpacing(props.m)}px;
+    `};
+    ${props.mt &&
+    css`
+      margin-top: ${calcSpacing(props.mt)}px;
+    `};
+    ${props.mr &&
+    css`
+      margin-right: ${calcSpacing(props.mr)}px;
+    `};
+    ${props.mb &&
+    css`
+      margin-bottom: ${calcSpacing(props.mb)}px;
+    `};
+    ${props.ml &&
+    css`
+      margin-left: ${calcSpacing(props.ml)}px;
+    `};
+  `
+}
+
+/**
+ * Inserir CSS de espaçamento padding
+ */
+export const setSpacingPadding = (props: PaddingTypes) => {
   return css`
     ${props.p &&
     css`
@@ -74,27 +113,6 @@ export const setSpacingStyles = (props: SpacingTypes) => {
     ${props.pl &&
     css`
       padding-left: ${calcSpacing(props.pl)}px;
-    `};
-
-    ${props.m &&
-    css`
-      margin: ${calcSpacing(props.m)}px;
-    `};
-    ${props.mt &&
-    css`
-      margin-top: ${calcSpacing(props.mt)}px;
-    `};
-    ${props.mr &&
-    css`
-      margin-right: ${calcSpacing(props.mr)}px;
-    `};
-    ${props.mb &&
-    css`
-      margin-bottom: ${calcSpacing(props.mb)}px;
-    `};
-    ${props.ml &&
-    css`
-      margin-left: ${calcSpacing(props.ml)}px;
     `};
   `
 }

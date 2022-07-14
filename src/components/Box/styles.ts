@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components'
-import { setSpacingStyles } from '../../utils/styles/spacings'
+import {
+  setSpacingMargin,
+  setSpacingPadding
+} from '../../utils/styles/spacings'
 
 import { BoxProps, BorderProps, RadiusProps } from '.'
 
@@ -31,7 +34,8 @@ const setBorder = ({ color, style, width }: BorderProps) => {
 
 export const Wrapper = styled.div<BoxProps>`
   ${({ theme, radius, border, bgColor, elevation, ...props }) => css`
-    ${setSpacingStyles(props)};
+    ${setSpacingMargin(props)};
+    ${setSpacingPadding(props)};
 
     ${elevation &&
     css`
