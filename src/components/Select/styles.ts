@@ -120,7 +120,7 @@ export const ContentSelectedMulti = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    gap: ${theme.spacing.xs};
+    gap: ${theme.spacing('xs')};
     cursor: pointer;
     border-radius: 8px;
     z-index: 1;

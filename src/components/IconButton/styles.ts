@@ -13,8 +13,8 @@ const rotate = keyframes`
 
 const sizes = {
   small: (theme: DefaultTheme) => css`
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     padding: 6px;
 
     box-shadow: inset 0 0 0 2px transparent;
@@ -57,6 +57,11 @@ export const Wrapper = styled.button<IconButtonProps>`
       cursor: not-allowed;
       background-color: ${theme.colors.disabled};
       color: ${theme.colors.white2};
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
     }
 
     ${size && sizes[size](theme)}

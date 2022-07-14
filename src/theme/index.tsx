@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { calcSpacing } from '../utils/styles/spacings'
 
 export const theme = {
   colors: {
@@ -75,15 +76,24 @@ export const theme = {
     /** #6E719833 */
     disabled: '#6E719833'
   },
-  spacing: {
-    /** 8px */
-    xs: '8px',
-    /** 16px */
-    md: '16px',
-    /** 24px */
-    lg: '24px',
-    /** 32px */
-    xl: '32px'
+  /**
+   * Função que recebe uma string de tamanho pre definida ou um número para calcular o valor (valor * 8)
+   *
+   * xs: 8px | md: 16px | lg: 24px | xl: 32px
+   */
+  spacing: (value: number | 'xs' | 'md' | 'lg' | 'xl') => {
+    switch (value) {
+      case 'xs':
+        return `${calcSpacing(1)}px`
+      case 'md':
+        return `${calcSpacing(2)}px`
+      case 'lg':
+        return `${calcSpacing(3)}px`
+      case 'xl':
+        return `${calcSpacing(4)}px`
+      default:
+        return `${calcSpacing(value)}px`
+    }
   },
   radius: {
     /** 4px */

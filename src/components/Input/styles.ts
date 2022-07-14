@@ -88,7 +88,7 @@ export const Icon = styled.i`
     top: 0;
     left: 0;
     height: 100%;
-    margin-left: 16px;
+    margin-left: ${theme.spacing('md')};
     padding: 2px;
 
     svg {

@@ -83,7 +83,7 @@ export const IconLabel = styled.i`
     align-items: center;
     color: ${theme.colors.white};
     transition: ${theme.transitions.all};
-    margin-left: ${theme.spacing.xs};
+    margin-left: ${theme.spacing('xs')};
 
     svg {
       width: 24px;
@@ -99,7 +99,7 @@ export const Label = styled.label`
     font-size: ${theme.font.size.md};
     color: ${theme.colors.white};
     line-height: 1.5;
-    margin-left: ${theme.spacing.xs};
+    margin-left: ${theme.spacing('xs')};
     transition: ${theme.transitions.all};
   `}
 `

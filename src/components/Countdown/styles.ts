@@ -53,7 +53,7 @@ export const SeparatorTime = styled.div`
       background-color: ${theme.colors.background.cardSection};
 
       &:first-child {
-        margin-bottom: 20px;
+        margin-bottom: ${theme.spacing('md')};
       }
     }
   `}
@@ -68,7 +68,7 @@ export const TextTitle = styled.h6`
     text-transform: uppercase;
     line-height: 1.5;
     letter-spacing: 0.2em;
-    margin-bottom: ${theme.spacing.xs};
+    margin-bottom: ${theme.spacing('xs')};
   `}
 `
 
@@ -79,12 +79,12 @@ export const TextSub = styled.h6`
     font-size: ${theme.font.size.md};
     color: ${theme.colors.white};
     line-height: 1.5;
-    margin-top: ${theme.spacing.xs};
+    margin-top: ${theme.spacing('xs')};
   `}
 `
 
 export const Wrapper = styled.div<CountdownProps>`
-  ${({ size }) => css`
+  ${({ theme, size }) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,7 +116,7 @@ export const Wrapper = styled.div<CountdownProps>`
           height: 4px;
 
           &:first-child {
-            margin-bottom: 16px;
+            margin-bottom: ${theme.spacing('md')};
           }
         }
       }

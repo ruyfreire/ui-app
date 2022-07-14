@@ -40,7 +40,7 @@ export const Title = styled.h4`
     font-weight: ${theme.font.weight.bold};
     color: ${theme.colors.white};
     line-height: 1.2;
-    margin-bottom: 16px;
+    margin-bottom: ${theme.spacing('md')};
   `}
 `
 
@@ -59,7 +59,7 @@ export const Content = styled.p<ContentProps>`
 
     ${mb &&
     css`
-      margin-bottom: 32px;
+      margin-bottom: ${theme.spacing('xl')};
     `}
   `}
 `
@@ -71,7 +71,7 @@ type BoxContentProps = {
 export const BoxContent = styled.div<BoxContentProps>`
   ${({ theme, column }) => css`
     width: 100%;
-    padding: 24px;
+    padding: ${theme.spacing('lg')};
     border-radius: 24px;
     background-color: ${theme.colors.background.cardSection};
 

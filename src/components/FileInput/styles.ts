@@ -12,7 +12,7 @@ export const Wrapper = styled.div<WrapperProps>`
     justify-content: center;
     flex-direction: column;
     border-radius: 24px;
-    padding: 16px;
+    padding: ${theme.spacing('xs')};
     border: 4px dashed ${theme.colors.white3};
     min-width: 260px;
     min-height: 260px;
@@ -48,7 +48,7 @@ export const Description = styled.p`
     line-height: 1.5;
     color: ${theme.colors.white};
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: ${theme.spacing('xs')};
   `}
 `
 

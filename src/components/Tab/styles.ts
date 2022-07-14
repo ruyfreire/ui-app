@@ -55,7 +55,7 @@ export const Icon = styled.i`
     width: 24px;
     height: 24px;
     color: ${theme.colors.white};
-    margin-right: 8px;
+    margin-right: ${theme.spacing('xs')};
   `}
 `
 

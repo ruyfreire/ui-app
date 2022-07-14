@@ -26,7 +26,7 @@ export const Wrapper = styled.div<TipCardProps>`
     ${size === 'small' &&
     css`
       ${BoxIcon} {
-        margin-right: 12px;
+        margin-right: ${theme.spacing('xs')};
 
         svg {
           width: 32px;
@@ -49,8 +49,8 @@ export const BoxIcon = styled.i<BoxIconProps>`
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 12px;
-    margin-right: 16px;
+    padding: ${theme.spacing('md')};
+    margin-right: ${theme.spacing('md')};
     border-radius: 8px;
     background-color: ${theme.colors.background.cardSection};
 
