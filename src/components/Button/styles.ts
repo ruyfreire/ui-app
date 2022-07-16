@@ -1,5 +1,6 @@
 import styled, { css, DefaultTheme, keyframes } from 'styled-components'
 import { ButtonProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 const rotate = keyframes`
   from {
@@ -112,12 +113,14 @@ export const IconLoader = styled.i`
 `
 
 export const Button = styled.button<ButtonProps>`
-  ${({ theme, variant, size, isLoading, fullWidth }) => css`
+  ${({ theme, variant, size, isLoading, fullWidth, ...props }) => css`
     font-family: ${theme.font.family.base};
     font-weight: ${theme.font.weight.semiBold};
     color: ${theme.colors.white};
     letter-spacing: -5%;
     line-height: 24px;
+
+    ${setSpacingMargin(props)};
 
     display: inline-flex;
     align-items: center;

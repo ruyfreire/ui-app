@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components'
 import { InputProps } from '.'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
 
 export const Input = styled.input<InputProps & { icon?: boolean }>`
-  ${({ theme, error, align, icon }) => css`
+  ${({ theme, error, align, icon, fullWidth }) => css`
     font-family: ${theme.font.family.base};
     color: ${theme.colors.white};
     background-color: transparent;
@@ -59,12 +60,23 @@ export const Input = styled.input<InputProps & { icon?: boolean }>`
         color: ${theme.colors.peach.base};
       }
     `}
+
+    ${fullWidth &&
+    css`
+      width: 100%;
+    `}
   `}
 `
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+type WrapperProps = MarginTypes
+
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ ...props }) => css`
+    display: flex;
+    flex-direction: column;
+
+    ${setSpacingMargin(props)};
+  `}
 `
 
 export const InputContainer = styled.div`
@@ -83,7 +95,7 @@ export const Icon = styled.i`
     top: 0;
     left: 0;
     height: 100%;
-    margin-left: 16px;
+    margin-left: ${theme.spacing('md')};
     padding: 2px;
 
     svg {

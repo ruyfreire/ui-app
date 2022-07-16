@@ -1,0 +1,79 @@
+import {
+  Meta,
+  ColorPalette,
+  ColorItem,
+  Typeset,
+  Story
+} from '@storybook/addon-docs'
+import { theme } from '../src/theme'
+
+<Meta title="Introdução/Globais" />
+
+# Propriedades globais
+
+Propriedades de espaçamento recebem um número que será `multiplicado por 8`
+
+## Margin
+
+A maioria dos componentes aceitam propriedades de espaçamento para alterar `margin`.
+Componentes flutuantes como `Modal`, `Tooltip` e `Toast` não aceitam essas propriedades de espaçamento
+
+| Nome | Tipo   | Descrição             | Estilo        |
+| ---- | ------ | --------------------- | ------------- |
+| m    | number | margem todos os lados | margin        |
+| mt   | number | margem para cima      | margin-top    |
+| mr   | number | margem para direita   | margin-right  |
+| mb   | number | margem para baixo     | margin-bottom |
+| ml   | number | margem para esquerda  | margin-left   |
+
+✔️ margem aplicada
+```jsx
+// margin-bottom: 8px
+<Button mb={1}>Botão</Button>
+```
+```jsx
+// margin-left: 8px
+// margin-right: 16px
+<Input ml={1} mr={2} name="nome" />
+```
+
+## Padding
+
+Os componentes `Box` e `Grid` também aceitam propriedades de espaçamento para alterar `padding`
+
+| Nome | Tipo   | Descrição                    | Estilo         |
+| ---- | ------ | ---------------------------- | -------------- |
+| p    | number | preenchimento todos os lados | padding        |
+| pt   | number | preenchimento para cima      | padding-top    |
+| pr   | number | preenchimento para direita   | padding-right  |
+| pb   | number | preenchimento para baixo     | padding-bottom |
+| pl   | number | preenchimento para esquerda  | padding-left   |
+
+
+✔️ Preenchimento aplicado
+```jsx
+// margin-bottom: 8px
+// padding: 8px
+<Box mb={1} p={1}>
+  <p>Texto...</p>
+</Box>
+```
+```jsx
+// padding: 8px
+<Grid p={1} container>
+  <Grid item>
+    <p>Texto...</p>
+  </Grid>
+</Grid>
+```
+
+O componente `Grid` só aceita propriedades de espaçamento em seu elemento `container`
+
+❌ Preenchimento e margem nao aplicado
+```jsx
+<Grid container>
+  <Grid item m={1} p={1}>
+    <p>Texto...</p>
+  </Grid>
+</Grid>
+```

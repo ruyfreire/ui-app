@@ -1,36 +1,38 @@
 import React from 'react'
+import { MarginTypes } from '../../utils/styles/spacings'
 
 import * as S from './styles'
 
 /**
  * Props para o componente Countdown
  */
-export type CountdownProps = React.HTMLAttributes<HTMLDivElement> & {
-  /**
-   * Hora
-   */
-  hour?: number
-  /**
-   * Minuto
-   */
-  minute?: number
-  /**
-   * Segundo
-   */
-  second?: number
-  /**
-   * Titulo exibido no cabeçalho
-   */
-  title?: string
-  /**
-   * Subtitulo exido no rodapé
-   */
-  subtitle?: string
-  /**
-   * Tamanho de fontes
-   */
-  size?: 'small' | 'medium'
-}
+export type CountdownProps = React.HTMLAttributes<HTMLDivElement> &
+  MarginTypes & {
+    /**
+     * Hora
+     */
+    hour?: number
+    /**
+     * Minuto
+     */
+    minute?: number
+    /**
+     * Segundo
+     */
+    second?: number
+    /**
+     * Titulo exibido no cabeçalho
+     */
+    title?: string
+    /**
+     * Subtitulo exido no rodapé
+     */
+    subtitle?: string
+    /**
+     * Tamanho de fontes
+     */
+    size?: 'small' | 'medium'
+  }
 
 /**
  * Contador com titulo, tempo e subtitulo

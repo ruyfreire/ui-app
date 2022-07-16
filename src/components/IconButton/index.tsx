@@ -4,65 +4,31 @@ import { MarginTypes } from '../../utils/styles/spacings'
 import * as S from './styles'
 
 /**
- * Props para o componente Button
+ * Props para o componente IconButton
  */
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+export type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   MarginTypes & {
-    /**
-     * Determina o estilo do botão
-     */
-    variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost'
     /**
      * Modifica o tamanho do botão
      */
     size?: 'small' | 'medium'
     /**
-     * Exibir um ícone ao lado esquerdo do texto do botão
-     */
-    startIcon?: React.ReactNode
-    /**
-     * Exibir um ícone ao lado direito do texto do botão
-     */
-    endIcon?: React.ReactNode
-    /**
      * Exibir ícone de loader no lugar do texto do botão
      */
     isLoading?: boolean
-    /**
-     * Deixa o botão com largura de 100%
-     */
-    fullWidth?: boolean
   }
 
 /**
- * Botão de ação
+ * Botão com apenas ícone
  */
-export const Button = ({
+export const IconButton = ({
   children,
-  variant = 'primary',
   size = 'medium',
-  startIcon,
-  endIcon,
   isLoading = false,
-  fullWidth = false,
   ...props
-}: ButtonProps) => (
-  <S.Button
-    variant={variant}
-    size={size}
-    isLoading={isLoading}
-    fullWidth={fullWidth}
-    {...props}
-  >
-    {startIcon && (
-      <S.Icon size={size} pos="left">
-        {startIcon}
-      </S.Icon>
-    )}
-
-    {children}
-
-    {isLoading && (
+}: IconButtonProps) => (
+  <S.Wrapper size={size} {...props}>
+    {isLoading ? (
       <S.IconLoader>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -76,12 +42,8 @@ export const Button = ({
           />
         </svg>
       </S.IconLoader>
+    ) : (
+      children
     )}
-
-    {endIcon && (
-      <S.Icon size={size} pos="right">
-        {endIcon}
-      </S.Icon>
-    )}
-  </S.Button>
+  </S.Wrapper>
 )

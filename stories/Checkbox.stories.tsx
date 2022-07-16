@@ -45,7 +45,7 @@ export default {
 } as ComponentMeta<typeof Checkbox>
 
 const Template: ComponentStory<typeof Checkbox> = (args) => {
-  const [checked, setChecked] = useState([])
+  const [checked, setChecked] = useState<Array<string>>([])
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>

@@ -1,24 +1,27 @@
 import styled, { css } from 'styled-components'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
 
-type WrapperProps = {
+type WrapperProps = MarginTypes & {
   added?: boolean
   over?: boolean
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, over, added }) => css`
+  ${({ theme, over, added, ...props }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-radius: 24px;
-    padding: 16px;
+    padding: ${theme.spacing('xs')};
     border: 4px dashed ${theme.colors.white3};
     min-width: 260px;
     min-height: 260px;
     cursor: pointer;
     position: relative;
     transition: ${theme.transitions.all};
+
+    ${setSpacingMargin(props)};
 
     ${(over || added) &&
     css`
@@ -48,7 +51,7 @@ export const Description = styled.p`
     line-height: 1.5;
     color: ${theme.colors.white};
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: ${theme.spacing('xs')};
   `}
 `
 

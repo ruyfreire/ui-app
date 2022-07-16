@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { MarginTypes } from '../../utils/styles/spacings'
 
 import * as S from './styles'
 
@@ -23,23 +24,21 @@ export type TabItemProps = {
 /**
  * Props para o componente Tab
  */
-export type TabProps = Omit<
-  React.HTMLAttributes<HTMLDivElement>,
-  'onChange'
-> & {
-  /**
-   * Array de itens da Tab
-   */
-  items: TabItemProps[]
-  /**
-   * Índice do item ativo
-   */
-  active: number
-  /**
-   * Função executada ao clicar em um item, recebe o índice do item clicado
-   */
-  onChange: (index: number) => void
-}
+export type TabProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &
+  MarginTypes & {
+    /**
+     * Array de itens da Tab
+     */
+    items: TabItemProps[]
+    /**
+     * Índice do item ativo
+     */
+    active: number
+    /**
+     * Função executada ao clicar em um item, recebe o índice do item clicado
+     */
+    onChange: (index: number) => void
+  }
 
 /**
  * Tab para exibir itens de menu

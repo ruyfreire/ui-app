@@ -1,20 +1,22 @@
 import React from 'react'
+import { MarginTypes } from '../../utils/styles/spacings'
 
 import * as S from './styles'
 
 /**
  * Props para o componente TipCard
  */
-export type TipCardProps = React.HTMLAttributes<HTMLDivElement> & {
-  /**
-   * Tamanho do card
-   */
-  size?: 'small' | 'medium'
-  /**
-   * Cores do ícone do card
-   */
-  variant?: 'warning' | 'error' | 'success' | 'info'
-}
+export type TipCardProps = React.HTMLAttributes<HTMLDivElement> &
+  MarginTypes & {
+    /**
+     * Tamanho do card
+     */
+    size?: 'small' | 'medium'
+    /**
+     * Cores do ícone do card
+     */
+    variant?: 'warning' | 'error' | 'success' | 'info'
+  }
 
 /**
  * TipCard exibir textos de aviso/observação

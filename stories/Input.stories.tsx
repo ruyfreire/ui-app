@@ -52,6 +52,10 @@ export default {
     },
     icon: {
       type: 'symbol'
+    },
+    fullWidth: {
+      type: 'boolean',
+      defaultValue: false
     }
   }
 } as ComponentMeta<typeof Input>

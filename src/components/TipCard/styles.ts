@@ -1,5 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import { TipCardProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 const colors = {
   warning: (theme: DefaultTheme) => css`
@@ -17,16 +18,18 @@ const colors = {
 }
 
 export const Wrapper = styled.div<TipCardProps>`
-  ${({ theme, size }) => css`
+  ${({ theme, size, ...props }) => css`
     display: flex;
     align-items: center;
     background-color: ${theme.colors.background.card};
     border-radius: 8px;
 
+    ${setSpacingMargin(props)};
+
     ${size === 'small' &&
     css`
       ${BoxIcon} {
-        margin-right: 12px;
+        margin-right: ${theme.spacing('xs')};
 
         svg {
           width: 32px;
@@ -49,8 +52,8 @@ export const BoxIcon = styled.i<BoxIconProps>`
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 12px;
-    margin-right: 16px;
+    padding: ${theme.spacing('md')};
+    margin-right: ${theme.spacing('md')};
     border-radius: 8px;
     background-color: ${theme.colors.background.cardSection};
 

@@ -1,8 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { useArgs } from '@storybook/client-api'
 
-import { Chip } from '../src/components'
+import { IconButton } from '../src/components'
 
 const Svg = (
   <svg
@@ -17,49 +16,29 @@ const Svg = (
 )
 
 export default {
-  title: 'Componentes/Chip',
-  component: Chip,
+  title: 'Componentes/Botão Ícone',
+  component: IconButton,
   argTypes: {
     children: {
-      type: 'string',
-      defaultValue: 'Chip'
+      defaultValue: Svg
     },
     size: {
-      defaultValue: 'small'
+      defaultValue: 'medium'
     },
-    icon: {
-      type: 'symbol'
+    isLoading: {
+      type: 'boolean',
+      defaultValue: false
     },
     disabled: {
       type: 'boolean',
       defaultValue: false
-    },
-    selected: {
-      type: 'boolean',
-      defaultValue: false
     }
   }
-} as ComponentMeta<typeof Chip>
+} as ComponentMeta<typeof IconButton>
 
-const Template: ComponentStory<typeof Chip> = (args) => {
-  const [, updateArgs] = useArgs()
-
-  return (
-    <Chip {...args} onClick={() => updateArgs({ selected: !args.selected })} />
-  )
-}
+const Template: ComponentStory<typeof IconButton> = (args) => (
+  <IconButton {...args} />
+)
 
 export const Default = Template.bind({})
 Default.storyName = 'Padrão'
-
-export const Icon = Template.bind({})
-Icon.args = {
-  icon: Svg
-}
-Icon.storyName = 'Com ícone'
-
-export const ButtonClose = Template.bind({})
-ButtonClose.args = {
-  close: () => false
-}
-ButtonClose.storyName = 'Botão de fechar'

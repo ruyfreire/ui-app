@@ -63,7 +63,7 @@ type BoxIconProps = Pick<ToastProps, 'variant'>
 export const BoxIcon = styled.i<BoxIconProps>`
   ${({ theme }) => css`
     display: flex;
-    margin-right: 8px;
+    margin-right: ${theme.spacing('xs')};
     color: ${theme.colors.black2};
 
     svg {

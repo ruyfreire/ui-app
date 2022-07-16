@@ -57,7 +57,8 @@ export const Contando: ComponentStory<typeof Countdown> = (args) => {
   const [hour, setHour] = useState(0)
   const [minute, setMinute] = useState(0)
   const [second, setSecond] = useState(0)
-  const timeout = useRef(null)
+  /* global NodeJS */
+  const timeout = useRef<NodeJS.Timeout>()
 
   useEffect(() => {
     timeout.current = setTimeout(() => {
@@ -86,5 +87,5 @@ export const Contando: ComponentStory<typeof Countdown> = (args) => {
     }
   }, [second])
 
-  return <Countdown hour={hour} minute={minute} second={second} />
+  return <Countdown {...args} hour={hour} minute={minute} second={second} />
 }

@@ -113,10 +113,10 @@ export const Content = styled.p<ContentProps>`
 
     ${mb &&
     css`
-      margin-bottom: 20px;
+      margin-bottom: ${theme.spacing('md')};
 
       @media (min-width: 600px) {
-        margin-bottom: 32px;
+        margin-bottom: ${theme.spacing('xl')};
       }
     `}
   `}
@@ -140,19 +140,23 @@ export const BoxActions = styled.div<BoxActionsProps>`
 `
 
 export const BoxImage = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-  width: 100%;
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: ${theme.spacing('xl')};
+    width: 100%;
+  `}
 `
 
 export const Icon = styled.i`
-  margin-bottom: 20px;
+  ${({ theme }) => css`
+    margin-bottom: ${theme.spacing('md')};
 
-  @media (min-width: 600px) {
-    margin-bottom: 32px;
-  }
+    @media (min-width: 600px) {
+      margin-bottom: ${theme.spacing('xl')};
+    }
+  `}
 `
 
 type IconCloseProps = {

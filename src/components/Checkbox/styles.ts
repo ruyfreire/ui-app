@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { CheckboxProps } from '.'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
 
 export const Input = styled.input<CheckboxProps>`
   ${({ theme, error }) => css`
@@ -83,7 +84,7 @@ export const IconLabel = styled.i`
     align-items: center;
     color: ${theme.colors.white};
     transition: ${theme.transitions.all};
-    margin-left: ${theme.spacing.xs};
+    margin-left: ${theme.spacing('xs')};
 
     svg {
       width: 24px;
@@ -99,12 +100,18 @@ export const Label = styled.label`
     font-size: ${theme.font.size.md};
     color: ${theme.colors.white};
     line-height: 1.5;
-    margin-left: ${theme.spacing.xs};
+    margin-left: ${theme.spacing('xs')};
     transition: ${theme.transitions.all};
   `}
 `
 
-export const Wrapper = styled.label`
-  display: flex;
-  align-items: center;
+type WrapperProps = MarginTypes
+
+export const Wrapper = styled.label<WrapperProps>`
+  ${({ ...props }) => css`
+    display: flex;
+    align-items: center;
+
+    ${setSpacingMargin(props)};
+  `}
 `

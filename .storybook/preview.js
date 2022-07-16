@@ -8,7 +8,8 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
-    hideNoControlsWarning: true
+    hideNoControlsWarning: true,
+    exclude: ['mt', 'mr', 'mb', 'ml', 'pt', 'pr', 'pb', 'pl']
   },
   backgrounds: {
     default: 'dark',

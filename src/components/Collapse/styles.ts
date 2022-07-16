@@ -1,16 +1,19 @@
 import styled, { css } from 'styled-components'
 import { CollapseProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 type WrapperProps = Omit<CollapseProps, 'title' | 'toggleOpen'> & {
   contentHeight?: number
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, open, contentHeight }) => css`
+  ${({ theme, open, contentHeight, ...props }) => css`
     background-color: ${theme.colors.black3};
     border-radius: 16px;
-    padding: 16px;
+    padding: ${theme.spacing('md')};
     transition: ${theme.transitions.all};
+
+    ${setSpacingMargin(props)};
 
     ${open
       ? css`
@@ -18,7 +21,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
           ${Content} {
             max-height: ${contentHeight ? `${contentHeight + 32}px` : 'none'};
-            padding: 16px;
+            padding: ${theme.spacing('md')};
             opacity: 1;
           }
 
@@ -35,14 +38,16 @@ export const Wrapper = styled.div<WrapperProps>`
 `
 
 export const BoxTitle = styled.div`
-  border-radius: 8px;
-  padding: 16px;
+  ${({ theme }) => css`
+    border-radius: 8px;
+    padding: ${theme.spacing('md')};
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  cursor: pointer;
+    cursor: pointer;
+  `}
 `
 
 export const Title = styled.p`
