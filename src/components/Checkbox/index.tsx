@@ -1,34 +1,36 @@
 import React from 'react'
+import { getPropsMargin, MarginTypes } from '../../utils/styles/spacings'
 
 import * as S from './styles'
 
 /**
  * Props para o componente Checkbox
  */
-export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  /**
-   * Exibe texto ao lado direito do checkbox
-   */
-  label?: string
-  /**
-   * Muda cor do checkbox para erro
-   */
-  error?: boolean
-  /**
-   * Exibir um ícone ao lado direito do checkbox
-   */
-  icon?: React.ReactNode
-  /**
-   * Atributo id para o input e usado para o html-for no label
-   */
-  id?: string
-}
+export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> &
+  MarginTypes & {
+    /**
+     * Exibe texto ao lado direito do checkbox
+     */
+    label?: string
+    /**
+     * Muda cor do checkbox para erro
+     */
+    error?: boolean
+    /**
+     * Exibir um ícone ao lado direito do checkbox
+     */
+    icon?: React.ReactNode
+    /**
+     * Atributo id para o input e usado para o html-for no label
+     */
+    id?: string
+  }
 
 /**
  * Checkbox para seleção de múltiplas opções
  */
 export const Checkbox = ({ label, icon, id, ...props }: CheckboxProps) => (
-  <S.Wrapper htmlFor={id}>
+  <S.Wrapper htmlFor={id} {...getPropsMargin(props)}>
     <S.Input id={id} {...props} type="checkbox" hidden />
 
     <S.IconCheckbox>

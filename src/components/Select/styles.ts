@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { SelectProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 type WrapperProps = Omit<
   SelectProps,
@@ -10,10 +11,12 @@ type WrapperProps = Omit<
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, listHeight, open }) => css`
+  ${({ theme, listHeight, open, ...props }) => css`
     border-radius: 8px;
     position: relative;
     z-index: 1;
+
+    ${setSpacingMargin(props)};
 
     ${open &&
     css`

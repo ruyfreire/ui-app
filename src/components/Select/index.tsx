@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { MarginTypes } from '../../utils/styles/spacings'
 
 import { Chip } from '../Chip'
 
@@ -9,7 +10,7 @@ type Option = string | number | object
 /**
  * Props para o componente Select
  */
-export type SelectProps = {
+export type SelectProps = MarginTypes & {
   /**
    * Lista de opções para exibir no select
    */

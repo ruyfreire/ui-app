@@ -1,5 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import { ChipProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 const sizes = {
   small: (theme: DefaultTheme) => css`
@@ -15,7 +16,7 @@ const sizes = {
 }
 
 export const Chip = styled.div<ChipProps>`
-  ${({ theme, size, disabled, selected }) => css`
+  ${({ theme, size, disabled, selected, ...props }) => css`
     font-family: ${theme.font.family.base};
     font-weight: ${theme.font.weight.medium};
     color: ${theme.colors.white2};
@@ -29,6 +30,8 @@ export const Chip = styled.div<ChipProps>`
     transition: ${theme.transitions.all};
     user-select: none;
     cursor: pointer;
+
+    ${setSpacingMargin(props)};
 
     ${selected &&
     css`

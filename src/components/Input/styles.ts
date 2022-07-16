@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { InputProps } from '.'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
 
 export const Input = styled.input<InputProps & { icon?: boolean }>`
   ${({ theme, error, align, icon, fullWidth }) => css`
@@ -67,9 +68,15 @@ export const Input = styled.input<InputProps & { icon?: boolean }>`
   `}
 `
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+type WrapperProps = MarginTypes
+
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ ...props }) => css`
+    display: flex;
+    flex-direction: column;
+
+    ${setSpacingMargin(props)};
+  `}
 `
 
 export const InputContainer = styled.div`

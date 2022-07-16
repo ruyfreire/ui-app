@@ -1,15 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import {
-  Title,
-  Subtitle,
-  Description,
-  Primary,
-  ArgsTable,
-  Stories
-} from '@storybook/addon-docs'
-
 import { Grid, Input, Box } from '../src/components'
 import { theme } from '../src/theme'
 
@@ -23,36 +14,9 @@ export default {
     md: { control: { type: 'range', min: 0, max: 12 } },
     lg: { control: { type: 'range', min: 0, max: 12 } },
     xl: { control: { type: 'range', min: 0, max: 12 } },
-    xxl: { control: { type: 'range', min: 0, max: 12 } }
-  },
-  parameters: {
-    controls: {
-      include: [
-        'flexDirection',
-        'alignItems',
-        'justifyContent',
-        'flexWrap',
-        'gap',
-        'xs',
-        'sm',
-        'md',
-        'lg',
-        'xl',
-        'xxl'
-      ]
-    },
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Subtitle />
-          <Description />
-          <Primary />
-          <ArgsTable />
-          <Stories />
-        </>
-      )
-    }
+    xxl: { control: { type: 'range', min: 0, max: 12 } },
+    container: { control: false },
+    item: { control: false }
   }
 } as ComponentMeta<typeof Grid>
 

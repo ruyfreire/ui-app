@@ -1,18 +1,21 @@
 import styled, { css } from 'styled-components'
 import { TabProps } from '.'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
 
-type TabStyleProps = Omit<TabProps, 'items' | 'active' | 'onChange'>
+type TabStyleProps = Omit<TabProps, 'items' | 'active' | 'onChange'> &
+  MarginTypes
 
 export const Wrapper = styled.div<TabStyleProps>`
-  ${({ theme }) => css`
+  ${({ theme, ...props }) => css`
     display: flex;
     border-radius: 16px;
-    width: 100%;
     height: 56px;
     position: relative;
     z-index: 2;
 
     background-color: ${theme.colors.black3};
+
+    ${setSpacingMargin(props)};
   `}
 `
 

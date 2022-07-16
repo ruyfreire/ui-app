@@ -1,14 +1,17 @@
 import styled, { css } from 'styled-components'
 import { CardProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 type WrapperProps = Omit<CardProps, 'title' | 'image'>
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, imageBg, imageDirection: direction }) => css`
+  ${({ theme, imageBg, imageDirection: direction, ...props }) => css`
     display: flex;
     justify-content: space-between;
     border-radius: 24px;
     width: 100%;
+
+    ${setSpacingMargin(props)};
 
     ${direction === 'row'
       ? css`

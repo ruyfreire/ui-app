@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { CountdownProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 export const ContainerTime = styled.div`
   display: flex;
@@ -84,10 +85,12 @@ export const TextSub = styled.h6`
 `
 
 export const Wrapper = styled.div<CountdownProps>`
-  ${({ theme, size }) => css`
+  ${({ theme, size, ...props }) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    ${setSpacingMargin(props)};
 
     ${size === 'small' &&
     css`

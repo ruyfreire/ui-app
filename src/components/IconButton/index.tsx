@@ -1,20 +1,22 @@
 import React from 'react'
+import { MarginTypes } from '../../utils/styles/spacings'
 
 import * as S from './styles'
 
 /**
  * Props para o componente IconButton
  */
-export type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  /**
-   * Modifica o tamanho do botão
-   */
-  size?: 'small' | 'medium'
-  /**
-   * Exibir ícone de loader no lugar do texto do botão
-   */
-  isLoading?: boolean
-}
+export type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  MarginTypes & {
+    /**
+     * Modifica o tamanho do botão
+     */
+    size?: 'small' | 'medium'
+    /**
+     * Exibir ícone de loader no lugar do texto do botão
+     */
+    isLoading?: boolean
+  }
 
 /**
  * Botão com apenas ícone

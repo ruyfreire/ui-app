@@ -1,16 +1,19 @@
 import styled, { css } from 'styled-components'
 import { CollapseProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 type WrapperProps = Omit<CollapseProps, 'title' | 'toggleOpen'> & {
   contentHeight?: number
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, open, contentHeight }) => css`
+  ${({ theme, open, contentHeight, ...props }) => css`
     background-color: ${theme.colors.black3};
     border-radius: 16px;
     padding: ${theme.spacing('md')};
     transition: ${theme.transitions.all};
+
+    ${setSpacingMargin(props)};
 
     ${open
       ? css`

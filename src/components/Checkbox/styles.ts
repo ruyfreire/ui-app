@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { CheckboxProps } from '.'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
 
 export const Input = styled.input<CheckboxProps>`
   ${({ theme, error }) => css`
@@ -104,7 +105,13 @@ export const Label = styled.label`
   `}
 `
 
-export const Wrapper = styled.label`
-  display: flex;
-  align-items: center;
+type WrapperProps = MarginTypes
+
+export const Wrapper = styled.label<WrapperProps>`
+  ${({ ...props }) => css`
+    display: flex;
+    align-items: center;
+
+    ${setSpacingMargin(props)};
+  `}
 `

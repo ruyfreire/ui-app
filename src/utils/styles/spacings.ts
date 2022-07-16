@@ -116,3 +116,11 @@ export const setSpacingPadding = (props: PaddingTypes) => {
     `};
   `
 }
+
+export const getPropsMargin = (props: object) => {
+  return Object.fromEntries(
+    Object.entries(props).filter(([key]) =>
+      ['m', 'mt', 'mr', 'mb', 'ml'].includes(key)
+    )
+  )
+}

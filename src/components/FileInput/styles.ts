@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
 
-type WrapperProps = {
+type WrapperProps = MarginTypes & {
   added?: boolean
   over?: boolean
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, over, added }) => css`
+  ${({ theme, over, added, ...props }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +20,8 @@ export const Wrapper = styled.div<WrapperProps>`
     cursor: pointer;
     position: relative;
     transition: ${theme.transitions.all};
+
+    ${setSpacingMargin(props)};
 
     ${(over || added) &&
     css`

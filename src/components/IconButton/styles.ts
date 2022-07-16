@@ -1,5 +1,6 @@
 import styled, { css, DefaultTheme, keyframes } from 'styled-components'
 import { IconButtonProps } from '.'
+import { setSpacingMargin } from '../../utils/styles/spacings'
 
 const rotate = keyframes`
   from {
@@ -39,7 +40,7 @@ const sizes = {
 }
 
 export const Wrapper = styled.button<IconButtonProps>`
-  ${({ theme, size }) => css`
+  ${({ theme, size, ...props }) => css`
     color: ${theme.colors.white};
     font-size: 0;
 
@@ -52,6 +53,8 @@ export const Wrapper = styled.button<IconButtonProps>`
     transition: ${theme.transitions.all};
     position: relative;
     background-color: ${theme.colors.white3};
+
+    ${setSpacingMargin(props)};
 
     :disabled {
       cursor: not-allowed;
