@@ -63,15 +63,16 @@ export const Icon = styled.i`
 `
 
 type ItemSelectedProps = {
-  pos?: number
+  active: number
+  size: number
 }
 
 export const ItemSelected = styled.div<ItemSelectedProps>`
-  ${({ theme, pos }) => css`
+  ${({ theme, active, size }) => css`
     position: absolute;
     top: -4px;
     bottom: -4px;
-    left: ${pos ? `${pos - 4}px` : '-4px'};
+    left: ${active ? `${active * size - 4}px` : '-4px'};
     width: calc(100% + 8px);
     z-index: -1;
 

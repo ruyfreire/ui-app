@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { MarginTypes } from '../../utils/styles/spacings'
 
 import * as S from './styles'
@@ -44,26 +44,27 @@ export type TabProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &
  * Tab para exibir itens de menu
  */
 export const Tab = ({ items = [], active, onChange, ...props }: TabProps) => {
-  const activeItem = useRef({} as HTMLDivElement)
+  const container = useRef({} as HTMLDivElement)
+  const [widthItem, setWidthItem] = useState<number>()
+
+  useEffect(() => {
+    setWidthItem(container.current.offsetWidth / 3)
+  }, [])
 
   return (
-    <S.Wrapper {...props}>
+    <S.Wrapper {...props} ref={container}>
       {items.map((item, index) => (
         <S.TabItem
           key={item.index}
           active={active === item.index}
-          ref={active === item.index ? activeItem : null}
-          onClick={(e) => {
-            activeItem.current = e.currentTarget
-            onChange(item.index)
-          }}
+          onClick={() => onChange(item.index)}
         >
           {item.icon && <S.Icon>{item.icon}</S.Icon>}
 
           <S.Item>{item.label}</S.Item>
 
-          {index === 0 && (
-            <S.ItemSelected pos={activeItem.current.offsetLeft} />
+          {index === 0 && widthItem && (
+            <S.ItemSelected active={active} size={widthItem} />
           )}
         </S.TabItem>
       ))}
