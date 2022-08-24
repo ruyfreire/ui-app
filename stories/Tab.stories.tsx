@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Tab } from '../src/components'
+import { Tabs, Tab } from '../src/components'
 
 const Svg = (
   <svg
@@ -20,77 +20,60 @@ const Svg = (
 
 export default {
   title: 'Componentes/Tab',
-  component: Tab,
+  component: Tabs,
   argTypes: {
-    items: {
-      defaultValue: [
-        {
-          index: 0,
-          label: 'Item 1'
-        },
-        {
-          index: 1,
-          label: 'Item 2'
-        },
-        {
-          index: 2,
-          label: 'Item 3'
-        },
-        {
-          index: 3,
-          label: 'Item 4'
-        }
-      ],
-      control: {
-        type: 'object'
-      },
-      table: {
-        type: {
-          summary: 'Item',
-          detail: '{ index: number, label: string, icon: ReactNode(24x24) }'
-        }
-      }
-    },
     active: {
       type: 'number',
       defaultValue: 0,
       control: false
     }
   }
-} as ComponentMeta<typeof Tab>
+} as ComponentMeta<typeof Tabs>
 
-const Template: ComponentStory<typeof Tab> = (args) => {
+const Template: ComponentStory<typeof Tabs> = (args) => {
   const [active, setActive] = useState<number>(0)
 
-  return <Tab {...args} active={active} onChange={setActive} />
+  return (
+    <Tabs {...args} active={active} onChange={setActive}>
+      <Tab>Tab 1</Tab>
+      <Tab>Tab 2</Tab>
+      <Tab>Tab 3</Tab>
+    </Tabs>
+  )
 }
 
 export const Default = Template.bind({})
 Default.storyName = 'Padrão'
 
-export const WithIcon = Template.bind({})
-WithIcon.storyName = 'Com ícone'
-WithIcon.args = {
-  items: [
-    {
-      index: 0,
-      label: 'Item 1',
-      icon: Svg
-    },
-    {
-      index: 1,
-      label: 'Item 2',
-      icon: Svg
-    },
-    {
-      index: 2,
-      label: 'Item 3',
-      icon: Svg
-    },
-    {
-      index: 3,
-      label: 'Item 4',
-      icon: Svg
-    }
-  ]
+const TemplateWithIcon: ComponentStory<typeof Tabs> = (args) => {
+  const [active, setActive] = useState<number>(0)
+
+  return (
+    <Tabs {...args} active={active} onChange={setActive}>
+      <Tab icon={Svg}>Tab 1</Tab>
+      <Tab icon={Svg}>Tab 2</Tab>
+      <Tab icon={Svg}>Tab 3</Tab>
+    </Tabs>
+  )
 }
+
+export const WithIcon = TemplateWithIcon.bind({})
+WithIcon.storyName = 'Com ícone'
+
+const TemplateLink: ComponentStory<typeof Tabs> = (args) => {
+  const [active, setActive] = useState<number>(0)
+
+  return (
+    <Tabs {...args} active={active} onChange={setActive}>
+      <Tab>
+        <a>Link 1</a>
+      </Tab>
+      <Tab>
+        <a>Link 2</a>
+      </Tab>
+    </Tabs>
+  )
+}
+
+export const Link = TemplateLink.bind({})
+Link.storyName = 'Componente filho'
