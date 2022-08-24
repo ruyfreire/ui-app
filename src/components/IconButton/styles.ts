@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme, keyframes } from 'styled-components'
 import { IconButtonProps } from '.'
-import { setSpacingMargin } from '../../utils/styles/spacings'
+import { setSpacingMargin } from '../../utils/styles'
 
 const rotate = keyframes`
   from {

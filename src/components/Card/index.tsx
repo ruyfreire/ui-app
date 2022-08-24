@@ -1,6 +1,6 @@
 import React from 'react'
 import { theme } from '../../theme'
-import { MarginTypes } from '../../utils/styles/spacings'
+import { MarginTypes } from '../../utils/styles'
 
 import * as S from './styles'
 

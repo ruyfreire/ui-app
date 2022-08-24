@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { calcSpacing } from '../utils/styles/spacings'
+import { calcSpacing } from '../utils/styles'
 
 export const theme = {
   colors: {

@@ -1,8 +1,5 @@
 import styled, { css } from 'styled-components'
-import {
-  setSpacingMargin,
-  setSpacingPadding
-} from '../../utils/styles/spacings'
+import { setSpacingMargin, setSpacingPadding } from '../../utils/styles'
 
 import { BoxProps, BorderProps, RadiusProps } from '.'
 

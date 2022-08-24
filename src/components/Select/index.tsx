@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { MarginTypes } from '../../utils/styles/spacings'
+import { MarginTypes } from '../../utils/styles'
 
 import { Chip } from '../Chip'
 

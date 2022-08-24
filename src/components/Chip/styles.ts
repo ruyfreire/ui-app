@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import { ChipProps } from '.'
-import { setSpacingMargin } from '../../utils/styles/spacings'
+import { setSpacingMargin } from '../../utils/styles'
 
 const sizes = {
   small: (theme: DefaultTheme) => css`

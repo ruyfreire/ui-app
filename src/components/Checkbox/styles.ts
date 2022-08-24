@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { CheckboxProps } from '.'
-import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles'
 
 export const Input = styled.input<CheckboxProps>`
   ${({ theme, error }) => css`

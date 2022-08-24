@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { CollapseProps } from '.'
-import { setSpacingMargin } from '../../utils/styles/spacings'
+import { setSpacingMargin } from '../../utils/styles'
 
 type WrapperProps = Omit<CollapseProps, 'title' | 'toggleOpen'> & {
   contentHeight?: number

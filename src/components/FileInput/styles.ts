@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles'
 
 type WrapperProps = MarginTypes & {
   added?: boolean

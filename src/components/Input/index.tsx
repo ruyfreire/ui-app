@@ -1,5 +1,5 @@
 import React from 'react'
-import { getPropsMargin, MarginTypes } from '../../utils/styles/spacings'
+import { getPropsMargin, MarginTypes } from '../../utils/styles'
 
 import * as S from './styles'
 

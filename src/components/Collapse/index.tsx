@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { MarginTypes } from '../../utils/styles/spacings'
+import { MarginTypes } from '../../utils/styles'
 
 import * as S from './styles'
 

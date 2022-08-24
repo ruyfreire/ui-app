@@ -1,1 +1,1 @@
-export { SpacingTypes } from './spacings'
+export * from './spacings'

@@ -4,7 +4,7 @@ import {
   setSpacingMargin,
   setSpacingPadding,
   SpacingTypes
-} from '../../utils/styles/spacings'
+} from '../../utils/styles'
 
 import { GridProps } from '.'
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { RadioProps } from '.'
-import { MarginTypes, setSpacingMargin } from '../../utils/styles/spacings'
+import { MarginTypes, setSpacingMargin } from '../../utils/styles'
 
 export const Input = styled.input<RadioProps>`
   ${({ theme, error }) => css`
