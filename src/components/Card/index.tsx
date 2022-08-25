@@ -31,6 +31,10 @@ export type CardProps = React.HTMLAttributes<HTMLDivElement> &
      * OBS: O card precisa ter ao menos texto de conteúdo e imagem
      */
     imageDirection?: 'row' | 'column'
+    /**
+     * Determina se a largura do Card deve ser 100%
+     */
+    fullWidth?: boolean
   }
 
 /**
@@ -43,11 +47,13 @@ export const Card = ({
   button = null,
   imageDirection = 'column',
   imageBg = theme.colors.background.card,
+  fullWidth = false,
   ...props
 }: CardProps) => (
   <S.Wrapper
     imageBg={imageBg}
     imageDirection={children && image ? imageDirection : 'column'}
+    fullWidth={fullWidth}
     {...props}
   >
     {image && <S.BoxImage>{image}</S.BoxImage>}

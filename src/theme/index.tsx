@@ -52,8 +52,8 @@ export const theme = {
       dark: '#EF586E'
     },
     background: {
-      /** #28393D */
-      primary: '#28393D',
+      /** #28293D */
+      primary: '#28293D',
       /** #2D2F45 */
       section: '#2D2F45',
       /** #373951 */

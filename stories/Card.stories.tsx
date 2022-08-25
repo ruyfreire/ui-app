@@ -23,6 +23,10 @@ export default {
       type: 'symbol',
       defaultValue: <Button>Botão</Button>
     },
+    fullWidth: {
+      type: 'boolean',
+      defaultValue: false
+    },
     imageBg: {
       defaultValue: '#161547',
       control: {

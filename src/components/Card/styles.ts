@@ -5,7 +5,7 @@ import { setSpacingMargin } from '../../utils/styles'
 type WrapperProps = Omit<CardProps, 'title' | 'image'>
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, imageBg, imageDirection: direction, ...props }) => css`
+  ${({ theme, imageBg, imageDirection: direction, fullWidth, ...props }) => css`
     display: flex;
     justify-content: space-between;
     border-radius: 24px;
@@ -16,7 +16,7 @@ export const Wrapper = styled.div<WrapperProps>`
     ${direction === 'row'
       ? css`
           flex-direction: row;
-          max-width: 600px;
+          max-width: ${fullWidth ? 'auto' : '800px'};
 
           ${BoxImage},
           ${BoxContent} {
@@ -24,12 +24,12 @@ export const Wrapper = styled.div<WrapperProps>`
           }
 
           ${BoxContent} {
-            max-width: 280px;
+            max-width: ${fullWidth ? 'auto' : '300px'};
           }
         `
       : css`
           flex-direction: column;
-          max-width: 290px;
+          max-width: ${fullWidth ? 'auto' : '400px'};
         `}
 
     background-color: ${imageBg || theme.colors.background.card};
@@ -103,4 +103,5 @@ export const BoxImage = styled.div`
   justify-content: center;
   border-radius: 24px;
   overflow: hidden;
+  flex: 1;
 `
