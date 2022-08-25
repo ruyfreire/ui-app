@@ -49,7 +49,7 @@ export declare const theme: {
             dark: string;
         };
         background: {
-            /** #28393D */
+            /** #28293D */
             primary: string;
             /** #2D2F45 */
             section: string;

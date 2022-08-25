@@ -26,8 +26,12 @@ export declare type CardProps = React.HTMLAttributes<HTMLDivElement> & MarginTyp
      * OBS: O card precisa ter ao menos texto de conteúdo e imagem
      */
     imageDirection?: 'row' | 'column';
+    /**
+     * Determina se a largura do Card deve ser 100%
+     */
+    fullWidth?: boolean;
 };
 /**
  * Card para informações e ações
  */
-export declare const Card: ({ children, title, image, button, imageDirection, imageBg, ...props }: CardProps) => JSX.Element;
+export declare const Card: ({ children, title, image, button, imageDirection, imageBg, fullWidth, ...props }: CardProps) => JSX.Element;

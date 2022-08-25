@@ -323,11 +323,15 @@ declare type CardProps = React.HTMLAttributes<HTMLDivElement> & MarginTypes & {
      * OBS: O card precisa ter ao menos texto de conteúdo e imagem
      */
     imageDirection?: 'row' | 'column';
+    /**
+     * Determina se a largura do Card deve ser 100%
+     */
+    fullWidth?: boolean;
 };
 /**
  * Card para informações e ações
  */
-declare const Card: ({ children, title, image, button, imageDirection, imageBg, ...props }: CardProps) => JSX.Element;
+declare const Card: ({ children, title, image, button, imageDirection, imageBg, fullWidth, ...props }: CardProps) => JSX.Element;
 
 /**
  * Props para o componente Collapse
@@ -701,7 +705,7 @@ declare const theme: {
             dark: string;
         };
         background: {
-            /** #28393D */
+            /** #28293D */
             primary: string;
             /** #2D2F45 */
             section: string;

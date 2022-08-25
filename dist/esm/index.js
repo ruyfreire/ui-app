@@ -458,8 +458,8 @@ var theme = {
             dark: '#EF586E'
         },
         background: {
-            /** #28393D */
-            primary: '#28393D',
+            /** #28293D */
+            primary: '#28293D',
             /** #2D2F45 */
             section: '#2D2F45',
             /** #373951 */
@@ -567,9 +567,9 @@ var GlobalStyle = createGlobalStyle(templateObject_1$a || (templateObject_1$a = 
 var templateObject_1$a;
 
 var Wrapper$8 = styled.div(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
-    var theme = _a.theme, imageBg = _a.imageBg, direction = _a.imageDirection, props = __rest(_a, ["theme", "imageBg", "imageDirection"]);
+    var theme = _a.theme, imageBg = _a.imageBg, direction = _a.imageDirection, fullWidth = _a.fullWidth, props = __rest(_a, ["theme", "imageBg", "imageDirection", "fullWidth"]);
     return css(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n    display: flex;\n    justify-content: space-between;\n    border-radius: 24px;\n    width: 100%;\n\n    ", ";\n\n    ", "\n\n    background-color: ", ";\n  "], ["\n    display: flex;\n    justify-content: space-between;\n    border-radius: 24px;\n    width: 100%;\n\n    ", ";\n\n    ", "\n\n    background-color: ", ";\n  "])), setSpacingMargin(props), direction === 'row'
-        ? css(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n          flex-direction: row;\n          max-width: 600px;\n\n          ", ",\n          ", " {\n            flex: 1;\n          }\n\n          ", " {\n            max-width: 280px;\n          }\n        "], ["\n          flex-direction: row;\n          max-width: 600px;\n\n          ", ",\n          ", " {\n            flex: 1;\n          }\n\n          ", " {\n            max-width: 280px;\n          }\n        "])), BoxImage$1, BoxContent$1, BoxContent$1) : css(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n          flex-direction: column;\n          max-width: 290px;\n        "], ["\n          flex-direction: column;\n          max-width: 290px;\n        "]))), imageBg || theme.colors.background.card);
+        ? css(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n          flex-direction: row;\n          max-width: ", ";\n\n          ", ",\n          ", " {\n            flex: 1;\n          }\n\n          ", " {\n            max-width: ", ";\n          }\n        "], ["\n          flex-direction: row;\n          max-width: ", ";\n\n          ", ",\n          ", " {\n            flex: 1;\n          }\n\n          ", " {\n            max-width: ", ";\n          }\n        "])), fullWidth ? 'auto' : '800px', BoxImage$1, BoxContent$1, BoxContent$1, fullWidth ? 'auto' : '300px') : css(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n          flex-direction: column;\n          max-width: ", ";\n        "], ["\n          flex-direction: column;\n          max-width: ", ";\n        "])), fullWidth ? 'auto' : '400px'), imageBg || theme.colors.background.card);
 });
 var Title$2 = styled.h4(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
@@ -584,15 +584,15 @@ var BoxContent$1 = styled.div(templateObject_13$2 || (templateObject_13$2 = __ma
     return css(templateObject_12$4 || (templateObject_12$4 = __makeTemplateObject(["\n    width: 100%;\n    padding: ", ";\n    border-radius: 24px;\n    background-color: ", ";\n\n    display: flex;\n    flex: 1;\n\n    ", ";\n  "], ["\n    width: 100%;\n    padding: ", ";\n    border-radius: 24px;\n    background-color: ", ";\n\n    display: flex;\n    flex: 1;\n\n    ", ";\n  "])), theme.spacing('lg'), theme.colors.background.cardSection, column
         ? css(templateObject_10$4 || (templateObject_10$4 = __makeTemplateObject(["\n          flex-direction: column;\n          align-items: flex-start;\n        "], ["\n          flex-direction: column;\n          align-items: flex-start;\n        "]))) : css(templateObject_11$4 || (templateObject_11$4 = __makeTemplateObject(["\n          justify-content: space-between;\n          align-items: center;\n\n          ", " {\n            margin-bottom: 0;\n          }\n        "], ["\n          justify-content: space-between;\n          align-items: center;\n\n          ", " {\n            margin-bottom: 0;\n          }\n        "])), Title$2));
 });
-var BoxImage$1 = styled.div(templateObject_14$2 || (templateObject_14$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 24px;\n  overflow: hidden;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 24px;\n  overflow: hidden;\n"])));
+var BoxImage$1 = styled.div(templateObject_14$2 || (templateObject_14$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 24px;\n  overflow: hidden;\n  flex: 1;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 24px;\n  overflow: hidden;\n  flex: 1;\n"])));
 var templateObject_1$9, templateObject_2$9, templateObject_3$9, templateObject_4$9, templateObject_5$7, templateObject_6$6, templateObject_7$6, templateObject_8$5, templateObject_9$4, templateObject_10$4, templateObject_11$4, templateObject_12$4, templateObject_13$2, templateObject_14$2;
 
 /**
  * Card para informações e ações
  */
 var Card = function (_a) {
-    var children = _a.children, _b = _a.title, title = _b === void 0 ? '' : _b, _c = _a.image, image = _c === void 0 ? null : _c, _d = _a.button, button = _d === void 0 ? null : _d, _e = _a.imageDirection, imageDirection = _e === void 0 ? 'column' : _e, _f = _a.imageBg, imageBg = _f === void 0 ? theme.colors.background.card : _f, props = __rest(_a, ["children", "title", "image", "button", "imageDirection", "imageBg"]);
-    return (React.createElement(Wrapper$8, __assign({ imageBg: imageBg, imageDirection: children && image ? imageDirection : 'column' }, props),
+    var children = _a.children, _b = _a.title, title = _b === void 0 ? '' : _b, _c = _a.image, image = _c === void 0 ? null : _c, _d = _a.button, button = _d === void 0 ? null : _d, _e = _a.imageDirection, imageDirection = _e === void 0 ? 'column' : _e, _f = _a.imageBg, imageBg = _f === void 0 ? theme.colors.background.card : _f, _g = _a.fullWidth, fullWidth = _g === void 0 ? false : _g, props = __rest(_a, ["children", "title", "image", "button", "imageDirection", "imageBg", "fullWidth"]);
+    return (React.createElement(Wrapper$8, __assign({ imageBg: imageBg, imageDirection: children && image ? imageDirection : 'column', fullWidth: fullWidth }, props),
         image && React.createElement(BoxImage$1, null, image),
         React.createElement(BoxContent$1, { column: !!children },
             title && React.createElement(Title$2, null, title),
