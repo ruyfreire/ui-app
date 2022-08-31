@@ -132,7 +132,7 @@ var Label$2 = styled.label(templateObject_9$c || (templateObject_9$c = __makeTem
     var theme = _a.theme;
     return css(templateObject_8$c || (templateObject_8$c = __makeTemplateObject(["\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    color: ", ";\n    line-height: 1.5;\n    margin-left: ", ";\n    transition: ", ";\n  "], ["\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    color: ", ";\n    line-height: 1.5;\n    margin-left: ", ";\n    transition: ", ";\n  "])), theme.font.family.base, theme.font.weight.medium, theme.font.size.md, theme.colors.white, theme.spacing('xs'), theme.transitions.all);
 });
-var Wrapper$f = styled.label(templateObject_11$b || (templateObject_11$b = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
+var Wrapper$e = styled.label(templateObject_11$b || (templateObject_11$b = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var props = __rest(_a, []);
     return css(templateObject_10$c || (templateObject_10$c = __makeTemplateObject(["\n    display: flex;\n    align-items: center;\n\n    ", ";\n  "], ["\n    display: flex;\n    align-items: center;\n\n    ", ";\n  "])), setSpacingMargin(props));
 });
@@ -143,7 +143,7 @@ var templateObject_1$i, templateObject_2$h, templateObject_3$h, templateObject_4
  */
 var Checkbox = function (_a) {
     var label = _a.label, icon = _a.icon, id = _a.id, props = __rest(_a, ["label", "icon", "id"]);
-    return (React.createElement(Wrapper$f, __assign({ htmlFor: id }, getPropsMargin(props)),
+    return (React.createElement(Wrapper$e, __assign({ htmlFor: id }, getPropsMargin(props)),
         React.createElement(Input$3, __assign({ id: id }, props, { type: "checkbox", hidden: true })),
         React.createElement(IconCheckbox, null,
             React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "10", height: "8", viewBox: "0 0 10 8", fill: "none" },
@@ -210,7 +210,7 @@ var TextSub = styled.h6(templateObject_13$5 || (templateObject_13$5 = __makeTemp
     var theme = _a.theme;
     return css(templateObject_12$7 || (templateObject_12$7 = __makeTemplateObject(["\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    color: ", ";\n    line-height: 1.5;\n    margin-top: ", ";\n  "], ["\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    color: ", ";\n    line-height: 1.5;\n    margin-top: ", ";\n  "])), theme.font.family.base, theme.font.weight.bold, theme.font.size.md, theme.colors.white, theme.spacing('xs'));
 });
-var Wrapper$e = styled.div(templateObject_16$2 || (templateObject_16$2 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
+var Wrapper$d = styled.div(templateObject_16$2 || (templateObject_16$2 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var theme = _a.theme, size = _a.size, props = __rest(_a, ["theme", "size"]);
     return css(templateObject_15$2 || (templateObject_15$2 = __makeTemplateObject(["\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    ", ";\n\n    ", "\n  "], ["\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    ", ";\n\n    ", "\n  "])), setSpacingMargin(props), size === 'small' && css(templateObject_14$4 || (templateObject_14$4 = __makeTemplateObject(["\n      ", " {\n        width: 80px;\n        padding: 24px 8px;\n      }\n\n      ", " {\n        font-size: 3.2rem;\n      }\n\n      ", " {\n        font-size: 1.2rem;\n      }\n\n      ", " {\n        font-size: 1.2rem;\n      }\n\n      ", " {\n        margin: 0 4px;\n\n        span {\n          width: 4px;\n          height: 4px;\n\n          &:first-child {\n            margin-bottom: ", ";\n          }\n        }\n      }\n    "], ["\n      ", " {\n        width: 80px;\n        padding: 24px 8px;\n      }\n\n      ", " {\n        font-size: 3.2rem;\n      }\n\n      ", " {\n        font-size: 1.2rem;\n      }\n\n      ", " {\n        font-size: 1.2rem;\n      }\n\n      ", " {\n        margin: 0 4px;\n\n        span {\n          width: 4px;\n          height: 4px;\n\n          &:first-child {\n            margin-bottom: ", ";\n          }\n        }\n      }\n    "])), BoxTime, TextTime, TextTimeInfo, TextSub, SeparatorTime, theme.spacing('md')));
 });
@@ -221,7 +221,7 @@ var templateObject_1$g, templateObject_2$f, templateObject_3$f, templateObject_4
  */
 var Countdown = function (_a) {
     var _b = _a.hour, hour = _b === void 0 ? 0 : _b, _c = _a.minute, minute = _c === void 0 ? 0 : _c, _d = _a.second, second = _d === void 0 ? 0 : _d, title = _a.title, subtitle = _a.subtitle, _e = _a.size, size = _e === void 0 ? 'medium' : _e, props = __rest(_a, ["hour", "minute", "second", "title", "subtitle", "size"]);
-    return (React.createElement(Wrapper$e, __assign({ size: size }, props),
+    return (React.createElement(Wrapper$d, __assign({ size: size }, props),
         title && React.createElement(TextTitle, null, title),
         React.createElement(ContainerTime, null,
             React.createElement(BoxTime, null,
@@ -246,7 +246,7 @@ var Input$2 = styled.input(templateObject_4$e || (templateObject_4$e = __makeTem
     var theme = _a.theme, error = _a.error, align = _a.align, icon = _a.icon, fullWidth = _a.fullWidth;
     return css(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n    font-family: ", ";\n    color: ", ";\n    background-color: transparent;\n    font-size: ", ";\n    height: 100%;\n\n    text-align: ", ";\n    padding: ", ";\n    border-radius: ", ";\n    border: 2px solid ", ";\n    transition: ", ";\n\n    &::placeholder {\n      transition: ", ";\n      color: ", ";\n    }\n\n    &:hover {\n      &::placeholder,\n      & + ", " {\n        color: ", ";\n      }\n    }\n\n    &:active,\n    &:focus {\n      &::placeholder {\n        color: transparent;\n      }\n\n      & + ", " {\n        color: ", ";\n      }\n    }\n\n    &:not([value='']) {\n      & + ", " {\n        color: ", ";\n      }\n    }\n\n    ", "\n\n    ", "\n  "], ["\n    font-family: ", ";\n    color: ", ";\n    background-color: transparent;\n    font-size: ", ";\n    height: 100%;\n\n    text-align: ", ";\n    padding: ", ";\n    border-radius: ", ";\n    border: 2px solid ", ";\n    transition: ", ";\n\n    &::placeholder {\n      transition: ", ";\n      color: ", ";\n    }\n\n    &:hover {\n      &::placeholder,\n      & + ", " {\n        color: ", ";\n      }\n    }\n\n    &:active,\n    &:focus {\n      &::placeholder {\n        color: transparent;\n      }\n\n      & + ", " {\n        color: ", ";\n      }\n    }\n\n    &:not([value='']) {\n      & + ", " {\n        color: ", ";\n      }\n    }\n\n    ", "\n\n    ", "\n  "])), theme.font.family.base, theme.colors.white, theme.font.size.md, align, icon ? '12px 32px 12px 60px' : '12px 24px', theme.radius.md, theme.colors.secondary.base, theme.transitions.all, theme.transitions.all, theme.colors.white3, Icon$5, theme.colors.white, Icon$5, theme.colors.white, Icon$5, theme.colors.white, error && css(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n      border-color: ", ";\n\n      &:hover\n        + ", ",\n        &:focus\n        + ", ",\n        &\n        + ", ",\n        &:not([value=''])\n        + ", " {\n        color: ", ";\n      }\n    "], ["\n      border-color: ", ";\n\n      &:hover\n        + ", ",\n        &:focus\n        + ", ",\n        &\n        + ", ",\n        &:not([value=''])\n        + ", " {\n        color: ", ";\n      }\n    "])), theme.colors.peach.base, Icon$5, Icon$5, Icon$5, Icon$5, theme.colors.peach.base), fullWidth && css(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n      width: 100%;\n    "], ["\n      width: 100%;\n    "]))));
 });
-var Wrapper$d = styled.div(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
+var Wrapper$c = styled.div(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var props = __rest(_a, []);
     return css(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n    display: flex;\n    flex-direction: column;\n\n    ", ";\n  "], ["\n    display: flex;\n    flex-direction: column;\n\n    ", ";\n  "])), setSpacingMargin(props));
 });
@@ -270,7 +270,7 @@ var templateObject_1$f, templateObject_2$e, templateObject_3$e, templateObject_4
  */
 var Input$1 = function (_a) {
     var label = _a.label, error = _a.error, _b = _a.align, align = _b === void 0 ? 'left' : _b, icon = _a.icon, id = _a.id, props = __rest(_a, ["label", "error", "align", "icon", "id"]);
-    return (React.createElement(Wrapper$d, __assign({}, getPropsMargin(props)),
+    return (React.createElement(Wrapper$c, __assign({}, getPropsMargin(props)),
         label && React.createElement(Label$1, { htmlFor: id }, label),
         React.createElement(InputContainer, null,
             React.createElement(Input$2, __assign({ error: error, align: align, icon: !!icon, id: id }, props)),
@@ -294,7 +294,7 @@ var Label = styled.label(templateObject_9$8 || (templateObject_9$8 = __makeTempl
     var theme = _a.theme;
     return css(templateObject_8$8 || (templateObject_8$8 = __makeTemplateObject(["\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    color: ", ";\n    line-height: 1.5;\n    margin-left: ", ";\n    transition: ", ";\n  "], ["\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    color: ", ";\n    line-height: 1.5;\n    margin-left: ", ";\n    transition: ", ";\n  "])), theme.font.family.base, theme.font.weight.medium, theme.font.size.md, theme.colors.white, theme.spacing('xs'), theme.transitions.all);
 });
-var Wrapper$c = styled.label(templateObject_11$7 || (templateObject_11$7 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
+var Wrapper$b = styled.label(templateObject_11$7 || (templateObject_11$7 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var props = __rest(_a, []);
     return css(templateObject_10$8 || (templateObject_10$8 = __makeTemplateObject(["\n    display: flex;\n    align-items: center;\n\n    ", ";\n  "], ["\n    display: flex;\n    align-items: center;\n\n    ", ";\n  "])), setSpacingMargin(props));
 });
@@ -305,7 +305,7 @@ var templateObject_1$e, templateObject_2$d, templateObject_3$d, templateObject_4
  */
 var Radio = function (_a) {
     var label = _a.label, icon = _a.icon, id = _a.id, props = __rest(_a, ["label", "icon", "id"]);
-    return (React.createElement(Wrapper$c, __assign({ htmlFor: id }, getPropsMargin(props)),
+    return (React.createElement(Wrapper$b, __assign({ htmlFor: id }, getPropsMargin(props)),
         React.createElement(Input, __assign({ id: id }, props, { type: "radio", hidden: true })),
         React.createElement(IconRadio, null),
         icon && React.createElement(IconLabel, null, icon),
@@ -318,7 +318,7 @@ var colors$1 = {
     success: function (theme) { return css(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n    color: ", ";\n  "], ["\n    color: ", ";\n  "])), theme.colors.mint.base); },
     info: function (theme) { return css(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n    color: ", ";\n  "], ["\n    color: ", ";\n  "])), theme.colors.blueberry.base); }
 };
-var Wrapper$b = styled.div(templateObject_7$9 || (templateObject_7$9 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
+var Wrapper$a = styled.div(templateObject_7$9 || (templateObject_7$9 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var theme = _a.theme, size = _a.size, props = __rest(_a, ["theme", "size"]);
     return css(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n    display: flex;\n    align-items: center;\n    background-color: ", ";\n    border-radius: 8px;\n\n    ", ";\n\n    ", "\n  "], ["\n    display: flex;\n    align-items: center;\n    background-color: ", ";\n    border-radius: 8px;\n\n    ", ";\n\n    ", "\n  "])), theme.colors.background.card, setSpacingMargin(props), size === 'small' && css(templateObject_5$a || (templateObject_5$a = __makeTemplateObject(["\n      ", " {\n        margin-right: ", ";\n\n        svg {\n          width: 32px;\n          height: 32px;\n        }\n      }\n\n      ", " {\n        font-size: ", ";\n      }\n    "], ["\n      ", " {\n        margin-right: ", ";\n\n        svg {\n          width: 32px;\n          height: 32px;\n        }\n      }\n\n      ", " {\n        font-size: ", ";\n      }\n    "])), BoxIcon$1, theme.spacing('xs'), Text$1, theme.font.size.xs));
 });
@@ -337,7 +337,7 @@ var templateObject_1$d, templateObject_2$c, templateObject_3$c, templateObject_4
  */
 var TipCard = function (_a) {
     var children = _a.children, _b = _a.size, size = _b === void 0 ? 'medium' : _b, _c = _a.variant, variant = _c === void 0 ? 'warning' : _c, props = __rest(_a, ["children", "size", "variant"]);
-    return (React.createElement(Wrapper$b, __assign({ size: size }, props),
+    return (React.createElement(Wrapper$a, __assign({ size: size }, props),
         React.createElement(BoxIcon$1, { variant: variant },
             React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "48", height: "48", viewBox: "0 0 48 48" },
                 React.createElement("path", { opacity: "0.988987", d: "M23.9978 4.02823C12.9518 4.02823 3.9978 12.9823 3.9978 24.0283C3.9978 35.0743 12.9518 44.0283 23.9978 44.0283C35.0438 44.0283 43.9978 35.0743 43.9978 24.0283C43.9978 12.9823 35.0438 4.02823 23.9978 4.02823ZM23.9978 8.02824C32.8338 8.02824 39.9978 15.1923 39.9978 24.0283C39.9978 32.8643 32.8338 40.0283 23.9978 40.0283C15.1618 40.0283 7.9978 32.8643 7.9978 24.0283C7.9978 15.1923 15.1618 8.02824 23.9978 8.02824ZM23.9978 14.0283C22.8938 14.0283 21.9978 14.9243 21.9978 16.0283C21.9978 17.1323 22.8938 18.0283 23.9978 18.0283C25.1018 18.0283 25.9978 17.1323 25.9978 16.0283C25.9978 14.9243 25.1018 14.0283 23.9978 14.0283ZM21.9978 20.0283C20.8938 20.0283 19.9978 20.9243 19.9978 22.0283C19.9978 22.9923 20.7158 23.7123 21.6218 23.9043L20.4358 29.6523C19.9718 31.9743 21.6318 34.0283 23.9978 34.0283H25.9978C27.1018 34.0283 27.9978 33.1323 27.9978 32.0283C27.9978 30.9243 27.1018 30.0283 25.9978 30.0283H24.4358L25.9358 22.4043C26.1838 21.1662 25.2598 20.0283 23.9978 20.0283C23.7458 20.0283 22.3218 20.0283 21.9978 20.0283Z", fill: "currentColor" }))),
@@ -350,7 +350,7 @@ var colors = {
     error: function (theme) { return css(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n    background-color: ", ";\n    border-color: ", ";\n  "], ["\n    background-color: ", ";\n    border-color: ", ";\n  "])), theme.colors.peach.base, theme.colors.peach.light); },
     loading: function (theme) { return css(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n    background-color: ", ";\n    border-color: ", ";\n\n    ", ",\n    ", " {\n      color: ", ";\n    }\n  "], ["\n    background-color: ", ";\n    border-color: ", ";\n\n    ", ",\n    ", " {\n      color: ", ";\n    }\n  "])), theme.colors.background.card, theme.colors.background.cardSection, Text, BoxIcon, theme.colors.white); }
 };
-var Wrapper$a = styled.div(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
+var Wrapper$9 = styled.div(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {
     var theme = _a.theme, variant = _a.variant, show = _a.show;
     return css(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n    display: inline-flex;\n    align-items: center;\n    border-radius: 12px;\n    padding: 12px 16px;\n    border: 2px solid transparent;\n    box-shadow: ", ";\n    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n\n    ", "\n    ", ";\n  "], ["\n    display: inline-flex;\n    align-items: center;\n    border-radius: 12px;\n    padding: 12px 16px;\n    border: 2px solid transparent;\n    box-shadow: ", ";\n    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n\n    ", "\n    ", ";\n  "])), "0px 12px 16px ".concat(theme.colors.black2), show
         ? css(templateObject_5$9 || (templateObject_5$9 = __makeTemplateObject(["\n          transform: translateY(-20px);\n        "], ["\n          transform: translateY(-20px);\n        "]))) : css(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n          transform: translateY(100%);\n        "], ["\n          transform: translateY(100%);\n        "]))), variant && colors[variant](theme));
@@ -373,7 +373,7 @@ var templateObject_1$c, templateObject_2$b, templateObject_3$b, templateObject_4
 var Toast = function (_a) {
     var children = _a.children, _b = _a.variant, variant = _b === void 0 ? 'success' : _b, _c = _a.show, show = _c === void 0 ? false : _c, props = __rest(_a, ["children", "variant", "show"]);
     return (React.createElement(Overlay$1, null,
-        React.createElement(Wrapper$a, __assign({ variant: variant, show: show }, props),
+        React.createElement(Wrapper$9, __assign({ variant: variant, show: show }, props),
             React.createElement(BoxIcon, null,
                 variant === 'success' && (React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none" },
                     React.createElement("path", { d: "M12.0141 1.9989C6.49133 1.9989 2.01413 6.47589 2.01413 11.9989C2.01413 17.5219 6.49133 21.9989 12.0141 21.9989C17.5369 21.9989 22.0141 17.5219 22.0141 11.9989C22.0141 6.47589 17.5369 1.9989 12.0141 1.9989ZM12.0141 3.9989C16.4324 3.9989 20.0141 7.58089 20.0141 11.9989C20.0141 16.4169 16.4324 19.9989 12.0141 19.9989C7.59583 19.9989 4.01413 16.4169 4.01413 11.9989C4.01413 7.58089 7.59583 3.9989 12.0141 3.9989ZM16.0141 8.99889C15.7582 8.99889 15.4906 9.0849 15.2953 9.2799L11.5766 13.0299C11.3188 13.2879 11.0601 13.2399 10.8579 12.9369L9.85793 11.4369C9.55153 10.9769 8.91123 10.8489 8.45163 11.1549C7.99213 11.4619 7.86403 12.1019 8.17033 12.5609L9.17033 14.0609C10.0727 15.4149 11.8326 15.5869 12.9829 14.4369L16.7329 10.7179C17.1234 10.3269 17.1234 9.6709 16.7329 9.2799C16.5376 9.0849 16.27 8.99889 16.0141 8.99889Z", fill: "currentColor", fillOpacity: "0.5" }))),
@@ -394,7 +394,7 @@ var TooltipText = styled.span(templateObject_6$7 || (templateObject_6$7 = __make
     var theme = _a.theme, position = _a.position;
     return css(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n    position: absolute;\n    display: flex;\n    align-items: center;\n    opacity: 0;\n    transition: all 0.3s ease-in-out 0.3s;\n    width: max-content;\n    max-width: 300px;\n    z-index: -2;\n\n    padding: 4px 24px;\n    border-radius: 8px;\n    background-color: ", ";\n\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    line-height: 1.5;\n\n    ", ";\n\n    &:after {\n      content: '';\n      position: absolute;\n      width: 12px;\n      height: 12px;\n      border-radius: 2px;\n      background-color: ", ";\n    }\n  "], ["\n    position: absolute;\n    display: flex;\n    align-items: center;\n    opacity: 0;\n    transition: all 0.3s ease-in-out 0.3s;\n    width: max-content;\n    max-width: 300px;\n    z-index: -2;\n\n    padding: 4px 24px;\n    border-radius: 8px;\n    background-color: ", ";\n\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    line-height: 1.5;\n\n    ", ";\n\n    &:after {\n      content: '';\n      position: absolute;\n      width: 12px;\n      height: 12px;\n      border-radius: 2px;\n      background-color: ", ";\n    }\n  "])), theme.colors.background.cardSection, theme.font.size.md, theme.font.weight.normal, theme.colors.white, position && positions[position], theme.colors.background.cardSection);
 });
-var Wrapper$9 = styled.div(templateObject_7$7 || (templateObject_7$7 = __makeTemplateObject(["\n  position: relative;\n  display: inline-block;\n\n  &:hover,\n  &:focus {\n    ", " {\n      opacity: 1;\n      z-index: 2;\n    }\n  }\n"], ["\n  position: relative;\n  display: inline-block;\n\n  &:hover,\n  &:focus {\n    ", " {\n      opacity: 1;\n      z-index: 2;\n    }\n  }\n"])), TooltipText);
+styled.div(templateObject_7$7 || (templateObject_7$7 = __makeTemplateObject(["\n  position: relative;\n  display: inline-block;\n\n  &:hover,\n  &:focus {\n    ", " {\n      opacity: 1;\n      z-index: 2;\n    }\n  }\n"], ["\n  position: relative;\n  display: inline-block;\n\n  &:hover,\n  &:focus {\n    ", " {\n      opacity: 1;\n      z-index: 2;\n    }\n  }\n"])), TooltipText);
 var templateObject_1$b, templateObject_2$a, templateObject_3$a, templateObject_4$a, templateObject_5$8, templateObject_6$7, templateObject_7$7;
 
 /**
@@ -402,9 +402,13 @@ var templateObject_1$b, templateObject_2$a, templateObject_3$a, templateObject_4
  */
 var Tooltip = function (_a) {
     var children = _a.children, _b = _a.position, position = _b === void 0 ? 'bottom' : _b, text = _a.text, props = __rest(_a, ["children", "position", "text"]);
-    return (React.createElement(Wrapper$9, null,
-        children,
-        React.createElement(TooltipText, __assign({ position: position }, props), text)));
+    var content = null;
+    React.Children.map(children, function (child) {
+        if (React.isValidElement(child)) {
+            content = React.cloneElement(child, { className: 'Tooltip_Wrapper' }, child.props.children, React.createElement(TooltipText, __assign({ position: position }, props, { className: "Tooltip_Text" }), text));
+        }
+    });
+    return content;
 };
 
 var theme = {
@@ -563,7 +567,7 @@ var theme = {
 /**
  * Estilo global usado na base do tema
  */
-var GlobalStyle = createGlobalStyle(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n    color: ", ";\n  }\n"], ["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n    color: ", ";\n  }\n"])), theme.font.family.base, theme.font.size.md, theme.colors.white2);
+var GlobalStyle = createGlobalStyle(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n    color: ", ";\n  }\n\n  .Tooltip_Wrapper {\n    position: relative;\n\n    &:hover,\n    &:focus {\n      .Tooltip_Text {\n        opacity: 1;\n        z-index: 2;\n      }\n    }\n  }\n\n"], ["\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    outline: 0;\n    padding: 0;\n  }\n\n  html {\n    font-size: 10px;\n  }\n\n  body {\n    font-family: ", ";\n    font-size: ", ";\n    color: ", ";\n  }\n\n  .Tooltip_Wrapper {\n    position: relative;\n\n    &:hover,\n    &:focus {\n      .Tooltip_Text {\n        opacity: 1;\n        z-index: 2;\n      }\n    }\n  }\n\n"])), theme.font.family.base, theme.font.size.md, theme.colors.white2);
 var templateObject_1$a;
 
 var Wrapper$8 = styled.div(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {

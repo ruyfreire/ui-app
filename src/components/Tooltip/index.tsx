@@ -24,12 +24,21 @@ export const Tooltip = ({
   position = 'bottom',
   text,
   ...props
-}: TooltipProps) => (
-  <S.Wrapper>
-    {children}
+}: TooltipProps) => {
+  let content = null
 
-    <S.TooltipText position={position} {...props}>
-      {text}
-    </S.TooltipText>
-  </S.Wrapper>
-)
+  React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      content = React.cloneElement(
+        child,
+        { className: 'Tooltip_Wrapper' },
+        child.props.children,
+        <S.TooltipText position={position} {...props} className="Tooltip_Text">
+          {text}
+        </S.TooltipText>
+      )
+    }
+  })
+
+  return content
+}

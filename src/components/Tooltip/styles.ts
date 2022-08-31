@@ -82,16 +82,3 @@ export const TooltipText = styled.span<TooltipTextProps>`
     }
   `}
 `
-
-export const Wrapper = styled.div`
-  position: relative;
-  display: inline-block;
-
-  &:hover,
-  &:focus {
-    ${TooltipText} {
-      opacity: 1;
-      z-index: 2;
-    }
-  }
-`

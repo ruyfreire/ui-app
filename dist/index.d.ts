@@ -295,7 +295,7 @@ declare type TooltipProps = React.HTMLAttributes<HTMLSpanElement> & {
 /**
  * Tooltip para exibir textos no evento de hover ou focus de um elemento
  */
-declare const Tooltip: ({ children, position, text, ...props }: TooltipProps) => JSX.Element;
+declare const Tooltip: ({ children, position, text, ...props }: TooltipProps) => null;
 
 /**
  * Props para o componente Card

@@ -15,4 +15,4 @@ export declare type TooltipProps = React.HTMLAttributes<HTMLSpanElement> & {
 /**
  * Tooltip para exibir textos no evento de hover ou focus de um elemento
  */
-export declare const Tooltip: ({ children, position, text, ...props }: TooltipProps) => JSX.Element;
+export declare const Tooltip: ({ children, position, text, ...props }: TooltipProps) => null;

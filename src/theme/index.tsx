@@ -175,4 +175,17 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${theme.font.size.md};
     color: ${theme.colors.white2};
   }
+
+  .Tooltip_Wrapper {
+    position: relative;
+
+    &:hover,
+    &:focus {
+      .Tooltip_Text {
+        opacity: 1;
+        z-index: 2;
+      }
+    }
+  }
+
 `
