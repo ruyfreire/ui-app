@@ -26,6 +26,26 @@ export default {
             '{ width?: number, color?: string, style?: string<CssBorderStyleProperty> }'
         }
       }
+    },
+    display: {
+      type: 'string',
+      defaultValue: 'block'
+    },
+    flexDirection: {
+      type: 'string',
+      defaultValue: 'initial'
+    },
+    alignItems: {
+      type: 'string',
+      defaultValue: 'initial'
+    },
+    justifyContent: {
+      type: 'string',
+      defaultValue: 'initial'
+    },
+    gap: {
+      type: 'number',
+      defaultValue: 0
     }
   }
 } as ComponentMeta<typeof Box>

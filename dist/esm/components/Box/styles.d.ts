@@ -5,4 +5,9 @@ export declare const Wrapper: import("styled-components").StyledComponent<"div",
     border?: number | BorderProps | undefined;
     elevation?: number | undefined;
     bgColor?: string | undefined;
+    display?: import("csstype").Property.Display | undefined;
+    flexDirection?: import("csstype").Property.FlexDirection | undefined;
+    alignItems?: import("csstype").Property.AlignItems | undefined;
+    justifyContent?: import("csstype").Property.JustifyContent | undefined;
+    gap?: import("csstype").Property.Gap<string | number> | undefined;
 }, never>;

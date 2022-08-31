@@ -1,8 +1,8 @@
 /// <reference types="react" />
 export declare const Wrapper: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("react").HtmlHTMLAttributes<HTMLDivElement> & import("../../utils/styles").PaddingTypes & import("../../utils/styles").MarginTypes & {
-    flexDirection?: "inherit" | "row" | "initial" | "column" | "row-reverse" | "column-reverse" | undefined;
-    alignItems?: "inherit" | "center" | "initial" | "flex-start" | "flex-end" | "stretch" | undefined;
-    justifyContent?: "inherit" | "center" | "initial" | "flex-start" | "flex-end" | "space-between" | "space-around" | "stretch" | undefined;
+    flexDirection?: "inherit" | "row" | "initial" | "column" | "column-reverse" | "row-reverse" | undefined;
+    alignItems?: "inherit" | "center" | "initial" | "flex-end" | "flex-start" | "stretch" | undefined;
+    justifyContent?: "inherit" | "center" | "initial" | "flex-end" | "flex-start" | "stretch" | "space-around" | "space-between" | undefined;
     container?: boolean | undefined;
     item?: boolean | undefined;
     gap?: number | undefined;

@@ -30,9 +30,27 @@ const setBorder = ({ color, style, width }: BorderProps) => {
 }
 
 export const Wrapper = styled.div<BoxProps>`
-  ${({ theme, radius, border, bgColor, elevation, ...props }) => css`
+  ${({
+    theme,
+    radius,
+    border,
+    bgColor,
+    elevation,
+    display,
+    flexDirection,
+    alignItems,
+    justifyContent,
+    gap,
+    ...props
+  }) => css`
     ${setSpacingMargin(props)};
     ${setSpacingPadding(props)};
+
+    display: ${display};
+    flex-direction: ${flexDirection};
+    align-items: ${alignItems};
+    justify-content: ${justifyContent};
+    gap: ${Number(gap) ? `${gap}px` : `${gap}`};
 
     ${elevation &&
     css`
@@ -44,20 +62,26 @@ export const Wrapper = styled.div<BoxProps>`
       background-color: ${bgColor};
     `}
 
-    ${typeof radius === 'object'
-      ? css`
-          ${setRadius(radius)};
-        `
-      : css`
-          border-radius: ${radius}px;
-        `}
+    ${radius &&
+    css`
+      ${typeof radius === 'object'
+        ? css`
+            ${setRadius(radius)};
+          `
+        : css`
+            border-radius: ${radius}px;
+          `}
+    `}
 
-    ${typeof border === 'object'
-      ? css`
-          ${setBorder(border)};
-        `
-      : css`
-          border: ${border}px solid ${theme.colors.secondary.base};
-        `}
+    ${border &&
+    css`
+      ${typeof border === 'object'
+        ? css`
+            ${setBorder(border)};
+          `
+        : css`
+            border: ${border}px solid ${theme.colors.secondary.base};
+          `}
+    `}
   `}
 `

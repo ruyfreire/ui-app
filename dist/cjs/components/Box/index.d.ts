@@ -32,6 +32,26 @@ export declare type BoxProps = React.HtmlHTMLAttributes<HTMLDivElement> & Spacin
      * Cor de fundo do box
      */
     bgColor?: string;
+    /**
+     * Display do box
+     */
+    display?: CSSProperties['display'];
+    /**
+     * Direção dos itens em caso de display flex
+     */
+    flexDirection?: CSSProperties['flexDirection'];
+    /**
+     * Alinhamento dos itens em caso de display flex
+     */
+    alignItems?: CSSProperties['alignItems'];
+    /**
+     * Divisão dos itens em caso de display flex
+     */
+    justifyContent?: CSSProperties['justifyContent'];
+    /**
+     * Espaço entre os itens no caso de display flex
+     */
+    gap?: CSSProperties['gap'];
 };
 /**
  * Box para auxiliar em agrupamento e espaçamentos
@@ -41,4 +61,4 @@ export declare type BoxProps = React.HtmlHTMLAttributes<HTMLDivElement> & Spacin
  *  Texto
  * </Box>
  */
-export declare const Box: ({ ...props }: BoxProps) => JSX.Element;
+export declare const Box: ({ display, flexDirection, alignItems, justifyContent, gap, ...props }: BoxProps) => JSX.Element;
