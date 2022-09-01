@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { MarginTypes } from '../../utils/styles';
 declare type Option = string | number | object;
 /**
@@ -16,7 +15,7 @@ export declare type SelectProps = MarginTypes & {
     /**
      * Função executada ao selecionar uma opção
      */
-    onChange?: (option: Option | Array<Option>) => void;
+    onChange?: (option: any) => void;
     /**
      * Placeholder para o dropdown sem nenhuma opção selecionada
      */
@@ -28,7 +27,7 @@ export declare type SelectProps = MarginTypes & {
     /**
      * Função para formatar o label que deve ser exibido
      */
-    getOptionLabel?: (option: Option) => string | number;
+    getOptionLabel?: (option: any) => string | number;
     /**
      * Controla se o item selecionado deve ou não exibir na lista de opções aberta
      */

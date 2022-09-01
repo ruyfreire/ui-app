@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import React from 'react';
 import * as styled_components from 'styled-components';
 import { CSSProperties } from 'styled-components';
@@ -371,7 +370,7 @@ declare type SelectProps = MarginTypes & {
     /**
      * Função executada ao selecionar uma opção
      */
-    onChange?: (option: Option | Array<Option>) => void;
+    onChange?: (option: any) => void;
     /**
      * Placeholder para o dropdown sem nenhuma opção selecionada
      */
@@ -383,7 +382,7 @@ declare type SelectProps = MarginTypes & {
     /**
      * Função para formatar o label que deve ser exibido
      */
-    getOptionLabel?: (option: Option) => string | number;
+    getOptionLabel?: (option: any) => string | number;
     /**
      * Controla se o item selecionado deve ou não exibir na lista de opções aberta
      */
@@ -819,4 +818,4 @@ declare const theme: {
  */
 declare const GlobalStyle: styled_components.GlobalStyleComponent<{}, styled_components.DefaultTheme>;
 
-export { Box, Button, Card, Checkbox, Chip, Collapse, Countdown, FileInput, GlobalStyle, Grid, IconButton, Input, Modal, Radio, Select, Tab, Tabs, TipCard, Toast, Tooltip, theme };
+export { Box, BoxProps, Button, ButtonProps, Card, CardProps, Checkbox, CheckboxProps, Chip, ChipProps, Collapse, CollapseProps, Countdown, CountdownProps, FileInput, FileInputProps, GlobalStyle, Grid, GridProps, IconButton, IconButtonProps, Input, InputProps, Modal, ModalProps, Radio, RadioProps, Select, SelectProps, Tab, TabProps, Tabs, TabsProps, TipCard, TipCardProps, Toast, ToastProps, Tooltip, TooltipProps, theme };
