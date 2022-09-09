@@ -273,9 +273,9 @@ var Input$1 = function (_a) {
     return (React.createElement(Wrapper$c, __assign({}, getPropsMargin(props)),
         label && React.createElement(Label$1, { htmlFor: id }, label),
         React.createElement(InputContainer, null,
-            React.createElement(Input$2, __assign({ error: error, align: align, icon: !!icon, id: id }, props)),
+            React.createElement(Input$2, __assign({ error: !!error, align: align, icon: !!icon, id: id }, props)),
             icon && React.createElement(Icon$5, null, icon)),
-        error && React.createElement(ErrorMessage, null, error)));
+        error && typeof error === 'string' && (React.createElement(ErrorMessage, null, error))));
 };
 
 var Input = styled.input(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {

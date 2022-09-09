@@ -1,5 +1,5 @@
 import { SelectProps } from '.';
-export declare const Wrapper: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, Omit<SelectProps, "options" | "value" | "onChange" | "emptyOptionsText" | "defaultValue"> & {
+export declare const Wrapper: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, Omit<SelectProps, "defaultValue" | "onChange" | "value" | "options" | "emptyOptionsText"> & {
     listHeight?: number | undefined;
     open: boolean;
 }, never>;

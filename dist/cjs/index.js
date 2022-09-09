@@ -282,9 +282,9 @@ var Input$1 = function (_a) {
     return (React__default["default"].createElement(Wrapper$c, __assign({}, getPropsMargin(props)),
         label && React__default["default"].createElement(Label$1, { htmlFor: id }, label),
         React__default["default"].createElement(InputContainer, null,
-            React__default["default"].createElement(Input$2, __assign({ error: error, align: align, icon: !!icon, id: id }, props)),
+            React__default["default"].createElement(Input$2, __assign({ error: !!error, align: align, icon: !!icon, id: id }, props)),
             icon && React__default["default"].createElement(Icon$5, null, icon)),
-        error && React__default["default"].createElement(ErrorMessage, null, error)));
+        error && typeof error === 'string' && (React__default["default"].createElement(ErrorMessage, null, error))));
 };
 
 var Input = styled__default["default"].input(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function (_a) {

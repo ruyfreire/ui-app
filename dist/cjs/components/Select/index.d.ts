@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { MarginTypes } from '../../utils/styles';
 declare type Option = string | number | object;
 /**

@@ -11,7 +11,7 @@ export declare type InputProps = React.InputHTMLAttributes<HTMLInputElement> & M
     /**
      * Exibe texto de erro e muda cor do input para erro
      */
-    error?: string;
+    error?: string | boolean;
     /**
      * ID para ser usado no input e no html-for do label
      */

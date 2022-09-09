@@ -15,7 +15,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
     /**
      * Exibe texto de erro e muda cor do input para erro
      */
-    error?: string
+    error?: string | boolean
     /**
      * ID para ser usado no input e no html-for do label
      */
@@ -49,11 +49,13 @@ export const Input = ({
     {label && <S.Label htmlFor={id}>{label}</S.Label>}
 
     <S.InputContainer>
-      <S.Input error={error} align={align} icon={!!icon} id={id} {...props} />
+      <S.Input error={!!error} align={align} icon={!!icon} id={id} {...props} />
 
       {icon && <S.Icon>{icon}</S.Icon>}
     </S.InputContainer>
 
-    {error && <S.ErrorMessage>{error}</S.ErrorMessage>}
+    {error && typeof error === 'string' && (
+      <S.ErrorMessage>{error}</S.ErrorMessage>
+    )}
   </S.Wrapper>
 )

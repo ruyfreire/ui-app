@@ -2,7 +2,7 @@
 import { MarginTypes } from '../../utils/styles';
 export declare const Input: import("styled-components").StyledComponent<"input", import("styled-components").DefaultTheme, import("react").InputHTMLAttributes<HTMLInputElement> & MarginTypes & {
     label?: string | undefined;
-    error?: string | undefined;
+    error?: string | boolean | undefined;
     id?: string | undefined;
     align?: "left" | "right" | "center" | undefined;
     icon?: import("react").ReactNode;
