@@ -56,6 +56,7 @@ export const Overlay = styled.div`
   position: fixed;
   right: 10px;
   bottom: 0;
+  z-index: 50;
 `
 
 type BoxIconProps = Pick<ToastProps, 'variant'>

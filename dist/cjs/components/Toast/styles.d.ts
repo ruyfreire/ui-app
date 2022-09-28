@@ -2,7 +2,7 @@
 import { DefaultTheme } from 'styled-components';
 import { ToastProps } from '.';
 export declare const Wrapper: import("styled-components").StyledComponent<"div", DefaultTheme, import("react").HTMLAttributes<HTMLDivElement> & {
-    variant?: "error" | "success" | "loading" | undefined;
+    variant?: "success" | "error" | "loading" | undefined;
     show?: boolean | undefined;
 }, never>;
 export declare const Overlay: import("styled-components").StyledComponent<"div", DefaultTheme, {}, never>;
